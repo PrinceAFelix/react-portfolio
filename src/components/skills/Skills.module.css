@@ -1,0 +1,73 @@
+.skill-section {
+  width: 900px;
+  height: 700px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.skill-content {
+  position: relative;
+  width: auto;
+}
+
+.skill-text {
+  float: left;
+  text-align: left;
+}
+
+.skill-text .skills-list {
+  margin-top: 30px;
+}
+
+.skill-text .skills-list .skill-label {
+  color: #00b7c7;
+}
+
+.skill-text .skills-list .skills-item {
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.skills-graph {
+  width: 500px;
+  height: 10rem;
+  float: right;
+  text-align: left;
+  line-height: 20px;
+  transform: translate(50px, 100px);
+}
+
+.skills-graph .outer {
+  background-color: white;
+  width: 80%;
+  height: 30px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  margin-bottom: 5%;
+}
+
+.bar-graph {
+  display: inline-block;
+  width: var(--width);
+  height: 30px;
+  background-color: #00a9f4;
+  right: 52%;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  color: white;
+  vertical-align: middle;
+  line-height: 30px;
+  padding-left: 10px;
+}
+
+.skills-graph .outer span {
+  float: right;
+  height: 30px;
+  vertical-align: middle;
+  line-height: 30px;
+  padding-right: 5px;
+  color: #000000;
+}
+
+@media all and (max-width: 430px) {
+}

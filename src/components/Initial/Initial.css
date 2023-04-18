@@ -1,0 +1,15 @@
+.starting-page {
+    width: auto;
+    height: 1080px;
+    color: white;
+    position: relative;
+    text-align: center;
+    background-color: #2f4348;
+  }
+  
+  .middle-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }

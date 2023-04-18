@@ -1,0 +1,20 @@
+.section-title {
+  text-align: left;
+  padding-top: 100px;
+  font-family: "Comic Neue", cursive;
+  font-size: 45px;
+}
+
+.divider {
+  display: flex;
+  margin: 30px 0;
+  width: 100px;
+  height: 2px;
+  background-color: #00b7c7;
+}
+
+.center {
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
