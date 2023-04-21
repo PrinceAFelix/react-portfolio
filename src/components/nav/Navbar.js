@@ -1,24 +1,47 @@
 import React from 'react'
-import "./Navbar.css"
+
+import logo from '../../assets/logo.png'
+
+import classes from "./Navbar.module.css"
 
 
-export const Navbar  = () => {
+export const Navbar = () => {
   return (
-    <div className="header">
-      <div className="menu">
-        <div className="menu_burger"></div>
-      </div>
-      <div className='navbar'>
-        <div className="links">
-            <a className="page-link" href="#">HOME</a>
-            <a className="page-link" href="#about">ABOUT</a>
-            <a className="page-link" href="#skills">SKILLS</a>
-            <a className="page-link" href="#projects">PROJECTS</a>
-            <a className="page-link" href="#contact">CONTACT</a> 
+    <div className={classes.header}>
+
+      <div className={classes.navbar}>
+        <div>
+          <a href="/#">
+            <img className={classes.img} src={logo} alt="logo" />
+          </a>
         </div>
+        <div className={classes["nav-links"]}>
+          <ol>
+            <li>
+              <a href="/#about">About</a>
+            </li>
+            <li>
+              <a href="/#skills">Skills</a>
+            </li>
+            <li>
+              <a href="/#projects">Projects</a>
+            </li>
+            <li>
+              <a href="/#contact">Contact</a>
+            </li>
+          </ol>
+        </div>
+        <div className={classes.menu}>
+          <div className={classes["menu_burger"]}></div>
+        </div>
+      </div>
     </div>
-  </div>
   );
 };
+
+
+
+
+export default Navbar;
 
 
