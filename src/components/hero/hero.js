@@ -1,13 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, ReactSVG } from 'react'
+import { ReactComponent as ChevronArrow } from '../../assets/chevron-down.svg'
 import classes from './hero.module.css'
 import { Navbar } from '../nav/Navbar'
 
 
-
-
-
-const h2 = <h2>Prince Adrianne Felix.</h2>
-const h3 = <p>software developer</p>
+import logo from '../../assets/logo.png'
 
 
 const first = "Hi, My name is"
@@ -17,6 +14,37 @@ const third = "software developer"
 
 export const Hero = () => {
 
+  const [showPopup, setShowPopup] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
+  const [visibility, setVisibility] = useState(true);
+
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowPopup(true);
+    }, 2000);
+    return () => clearTimeout(timer);
+
+  }, []);
+
+  const handleVisibility = () => {
+    setVisibility(false);
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScrollY);
+    return () => {
+      window.removeEventListener('scroll', handleScrollY);
+    };
+  }, []);
+
+  const handleScrollY = () => {
+    setScrollY(window.scrollY)
+    if (scrollY === 0) {
+      setShowPopup(true);
+      setVisibility(true);
+    }
+  }
 
 
   const [isMouseEnter, setIsMouseEnter] = useState(
@@ -28,7 +56,6 @@ export const Hero = () => {
   );
 
   const handleMouseEnter = (line, index) => {
-    let temp = null;
     setIsMouseEnter((prevState) => {
 
       if (line === 1) {
@@ -42,7 +69,7 @@ export const Hero = () => {
           }),
         };
       }
-      else if (line == 2) {
+      else if (line === 2) {
         return {
           ...prevState, second: prevState.second.map((value, i) => {
             if (i === index) {
@@ -53,7 +80,7 @@ export const Hero = () => {
           }),
         };
       }
-      else if (line == 3) {
+      else if (line === 3) {
         return {
           ...prevState, third: prevState.third.map((value, i) => {
             if (i === index) {
@@ -75,30 +102,24 @@ export const Hero = () => {
         return {
           ...prevState, first: prevState.first.map((value, i) => {
             if (i === index) {
-              return true;
-            } else {
               return false;
             }
           }),
         };
       }
-      else if (line == 2) {
+      else if (line === 2) {
         return {
           ...prevState, second: prevState.second.map((value, i) => {
             if (i === index) {
-              return true;
-            } else {
               return false;
             }
           }),
         };
       }
-      else if (line == 3) {
+      else if (line === 3) {
         return {
           ...prevState, third: prevState.third.map((value, i) => {
             if (i === index) {
-              return true;
-            } else {
               return false;
             }
           }),
@@ -128,11 +149,14 @@ export const Hero = () => {
                   }
                 </span>
                 <br />
-                {
-                  second.split('').map((c, i) => {
-                    return <span onMouseEnter={() => handleMouseEnter(2, i)} onMouseLeave={() => handleMouseLeave(2, i)} className={`${classes.stretch} ${isMouseEnter.second[i] ? classes.stretching : ''}`} key={i}>{c}</span>
-                  })
-                }
+                <span className={classes.second}>
+                  {
+                    second.split('').map((c, i) => {
+                      return i === 0 ? <span onMouseEnter={() => handleMouseEnter(2, i)} onMouseLeave={() => handleMouseLeave(2, i)} className={`${classes.stretch} ${isMouseEnter.second[i] ? classes.stretching : ''}`} key={i}>{<img className={classes['big-initial']} src={logo} alt="" />}</span>
+                        : <span onMouseEnter={() => handleMouseEnter(2, i)} onMouseLeave={() => handleMouseLeave(2, i)} className={`${classes.stretch} ${isMouseEnter.second[i] ? classes.stretching : ''}`} key={i}>{c}</span>
+                    })
+                  }
+                </span>
                 <br />
                 <span className={classes.third}>
                   {
@@ -144,10 +168,14 @@ export const Hero = () => {
               </h1>
             }
           </div>
-          <a href="#about">
-            <i className="fa-solid fa-arrow-down fade"></i>
-          </a>
         </div>
+        {
+          showPopup && (
+            <div className={`${classes['popup-btn']} ${scrollY >= 1 ? classes.hidden : ''} ${visibility === false ? classes.hidden : ''}`}>
+              <a onClick={handleVisibility} href="#about"><ChevronArrow className={`${classes.svg}`} /></a>
+            </div>
+          )
+        }
       </div>
     </section >
   )
