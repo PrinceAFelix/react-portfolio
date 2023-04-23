@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat&display=swap");
+
+.skill-container {
+  width: 280px;
+  height: auto;
+  padding: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.5);
+  margin-bottom: 130px;
+}
+
+.title {
+  position: relative;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+}
+
+.title::before,
+.title::after {
+  position: relative;
+  display: flex;
+  font-family: "Caveat", cursive;
+  font-size: 14px;
+  margin: 0 20px;
+  opacity: 0.6;
+}
+.title::before {
+  content: "<h1>";
+}
+
+.title::after {
+  content: "</h1>";
+}
+
+.description {
+  text-align: left;
+  display: block;
+}
+
+.description p {
+  display: flex;
+  margin: 15px;
+}
+
+.description p::before {
+  margin-right: 30px;
+  content: "";
+  width: 2px;
+  height: auto;
+  border-radius: 25%;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.description::after,
+.description::before {
+  font-family: "Caveat", cursive;
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+.description::before {
+  content: "<p>";
+}
+
+.description::after {
+  content: "</p>";
+}

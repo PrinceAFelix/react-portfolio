@@ -34,7 +34,6 @@
 .second {
   display: flex;
   display: inline-flex;
-  /* background-color: red; */
   transform: translate(-30px, 10px);
 }
 
