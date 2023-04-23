@@ -5,8 +5,10 @@ import sharedstyle from '../styles/Sharedstyles.module.css'
 export const Skills = () => {
     return (
         <section className={classes["skill-section"]} id="skills">
-            <h1 className={sharedstyle["section-title"]}>Skills</h1>
-            <span className={sharedstyle["divider"]}></span>
+            <div className={sharedstyle["container"]}>
+                <h1 className={`${sharedstyle["section-title"]} ${classes["section-title"]}`}>Skills</h1>
+                <span className={sharedstyle["divider"]}></span>
+            </div>
             <div className={classes["skill-content"]}>
                 <div className={classes["skill-text"]}>
                     <h4>Familiarity with the Following Technical Skills</h4>

@@ -12,8 +12,11 @@ import airsearch from '../../assets/airsearch1.png'
 export const Projects = () => {
     return (
         <section className={classes["project-section"]} id="projects">
-            <h1 className={`${sharedstyle["section-title"]} ${sharedstyle.center}`}>Projects</h1>
-            <span className={`${sharedstyle["divider"]} ${sharedstyle.center}`}></span>
+            <div className={`${sharedstyle["container"]}  ${sharedstyle.center}`}>
+                <h1 className={`${sharedstyle["section-title"]}`}>Projects</h1>
+                <span className={`${sharedstyle["divider"]} ${sharedstyle.center}`}></span>
+            </div>
+
             <div className={classes["project-content"]}>
                 <div className={classes["project-list"]}>
 

@@ -7,8 +7,10 @@ export const About = () => {
   return (
     <div>
       <section className={classes.aboutsection} id="about">
-        <h1 className={sharedstyle["section-title"]}>About me</h1>
-        <span className={sharedstyle["divider"]}></span>
+        <div className={sharedstyle["container"]}>
+          <h1 className={sharedstyle["section-title"]}>About</h1>
+          <span className={sharedstyle["divider"]}></span>
+        </div>
         <div className={classes.aboutcontent}>
           <div className={classes.myInfo}>
             <div id="profile" className={classes['profile']}>
@@ -16,15 +18,18 @@ export const About = () => {
             </div>
           </div>
           <div className={classes["about-text"]}>
-            <p>
-              I'm Prince!<br /> A recent Computer Engineering Technology - Computing Science Graduate at Algonquin College. I've been passionate about technology since then and I found myself enjoying the software side of it.
+            <p className={sharedstyle.p}>
+              I'm Prince!<br /> A recent Computer Engineering Technology - Computing Science Graduate with frontend and backend skills and with a strong interest in software development. My passion for technology started early when I looked up to my cousin who graduated with Bachelor of Information Technology. Since then, I found myself enjoying the software side of it.
+              <br /><br />
+              My main focus today is to work in this field, a job that will help me excel in learning different things in this field and will help me explore the things I could do that I thought I couldn't.
               <br /><br />
               Well-organized developer, love challenges, problem solver with great passion for programming.
               <br /><br />
-              Aside from computer, I play different sports during my free time and spend time with families and friends.
               <a href="#contact">Say hello.</a>
             </p>
           </div>
+        </div>
+        <div className={sharedstyle['end-section']}>
 
         </div>
       </section>

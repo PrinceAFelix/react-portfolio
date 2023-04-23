@@ -19,13 +19,6 @@ body {
   color: #ffff;
 }
 
-.section-title {
-  text-align: left;
-  padding-top: 100px;
-  font-family: "Comic Neue", cursive;
-  font-size: 45px;
-}
-
 @media all and (max-width: 430px) {
   .section-title,
   .divider,

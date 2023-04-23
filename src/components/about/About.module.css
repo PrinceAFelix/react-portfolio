@@ -4,14 +4,6 @@
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  /* background-color: red; */
-}
-
-.sectiontitle {
-  text-align: left;
-  padding-top: 100px;
-  font-family: "Comic Neue", cursive;
-  font-size: 45px;
 }
 
 .myInfo {
@@ -22,8 +14,10 @@
   position: relative;
   float: right;
   text-align: center;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  box-shadow: rgba(0, 225, 255, 0.19) 0px 10px 20px,
+    rgba(255, 0, 234, 0.23) 0px 6px 6px;
   z-index: 1;
+  top: 50px;
 }
 
 .image {
@@ -56,18 +50,12 @@
 .about-text {
   width: auto;
   height: auto;
+  padding: 30px 0;
 }
 
 .about-text a {
   text-decoration: none;
   color: white;
-}
-
-.about-text p {
-  width: 500px;
-  text-align: left;
-  font-size: 18px;
-  font-family: "Dosis", sans-serif;
 }
 
 @media all and (max-width: 430px) {
