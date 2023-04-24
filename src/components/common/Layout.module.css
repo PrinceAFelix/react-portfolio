@@ -2,9 +2,9 @@
 
 .skill-container {
   width: 280px;
-  height: auto;
+  height: 235px;
   padding: 20px;
-  border: 3px solid rgba(255, 255, 255, 0.5);
+  border: 3px solid #ffffff;
   margin-bottom: 130px;
 }
 
@@ -63,4 +63,125 @@
 
 .description::after {
   content: "</p>";
+}
+
+.project-container {
+  width: 300px;
+  height: 220px;
+  border-radius: 20px;
+}
+
+.surface {
+  position: absolute;
+  background: rgb(0, 0, 0);
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.773546918767507) 0%,
+    rgba(213, 213, 213, 1) 68%
+  );
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  width: 320px;
+  height: 70px;
+  transform: translateY(-222px);
+  z-index: -1;
+}
+
+/* .img {
+  width: 40px;
+  height: 20px;
+  transition: all 500ms ease-in;
+}
+.img::before {
+  width: 40px;
+  height: 20px;
+  transition: all 500ms ease-in;
+}
+
+.img:hover {
+  transform: scale(2);
+} */
+
+.image-wrapper {
+  display: inline-block;
+  position: relative;
+  padding: 10px;
+  transform: translateX(8px);
+}
+
+.image-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 119px;
+  height: 110px;
+  background-color: #00000080; /* your desired color */
+  z-index: 5;
+  transition: opacity 1.5s ease-in; /* optional transition effect */
+  opacity: 1; /* change opacity to 1 on hover */
+  transform: translate(40px, 19px);
+  border-radius: 2px;
+}
+
+.image-wrapper:hover::before {
+  opacity: 0; /* start with 0 opacity */
+  transition: opacity 100ms ease-out; /* optional transition effect */
+}
+
+.image-wrapper img {
+  display: block;
+  width: 100%;
+  height: auto;
+  z-index: 2;
+}
+
+.img {
+  transition: all 500ms ease-in;
+}
+
+.active {
+  transform: scale(1.7);
+}
+
+.project-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 60%;
+  background-color: #454545;
+  border-radius: 0px 0px 19px 19px;
+  padding: 10px;
+}
+
+.project-title {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+}
+
+.span {
+  position: relative;
+  display: flex;
+  height: auto;
+}
+
+.span .ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-start; /* or center, space-between, etc. */
+}
+
+.span .ul li {
+  font-size: 13px;
+  font-family: "Inter", sans-serif;
+  font-style: italic;
+  margin-right: 20px;
+  opacity: 0.4;
+}
+
+.p {
+  font-size: 14px;
+  width: auto;
 }

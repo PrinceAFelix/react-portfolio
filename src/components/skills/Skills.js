@@ -69,7 +69,7 @@ export const Skills = () => {
                         <div className={`${classes['expereince-content']}`}>
                             <h1 className={layout.title}>Mobile Application Development</h1>
                             <span className={layout.description}>
-                                <p className={sharedstyle.p}>Design and develop a cross platform appication that works with internet connection and blueetoth nearby connection</p>
+                                <p className={sharedstyle.p}>Design and develop a cross platform chat application that works with internet connection and blueetoth nearby connection.</p>
                             </span>
                         </div>
                         <div className={classes['tech-list-container']}>

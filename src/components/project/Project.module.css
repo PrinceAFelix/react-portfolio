@@ -1,6 +1,11 @@
 .project-section {
-  width: auto;
+  width: 900px;
   height: 1350px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  margin-top: 10rem;
 }
 
 .center {
@@ -11,18 +16,25 @@
 
 .project-content {
   width: 1500px;
-  height: 1000px;
+  height: auto;
   position: relative;
   left: 50%;
   transform: translateX(-48%);
+  margin-top: 50px;
+  margin-bottom: 20%;
 }
 
-.project-list {
+.project-list ul {
   display: grid;
-  grid-template-columns: repeat(3, 23%);
-  grid-auto-rows: minmax(100px, auto);
+  grid-template-columns: repeat(3, 22rem);
+
   position: relative;
   justify-content: center;
+  row-gap: 120px;
+}
+.project-list ul li {
+  list-style: none;
+  margin: 0;
 }
 
 .project-list img {

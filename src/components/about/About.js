@@ -21,7 +21,7 @@ export const About = () => {
             <p className={sharedstyle.p}>
               I'm Prince!<br /> A recent Computer Engineering Technology - Computing Science Graduate with frontend and backend skills and with a strong interest in software development. My passion for technology started early when I looked up to my cousin who graduated with Bachelor of Information Technology. Since then, I found myself enjoying the software side of it.
               <br /><br />
-              My main focus today is to work in this field, a job that will help me excel in learning different things in this field and will help me explore the things I could do that I thought I couldn't.
+              My main focus today is to land a job that will help me excel in learning different things in this field and will help me explore the things I could do that I thought I couldn't.
               <br /><br />
               Well-organized developer, love challenges, problem solver with great passion for programming.
               <br /><br />

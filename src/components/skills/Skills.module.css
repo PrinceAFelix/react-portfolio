@@ -14,7 +14,7 @@
   width: auto;
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  gap: 10px;
   width: auto;
   transform: translate(-50px, 50px);
 }
