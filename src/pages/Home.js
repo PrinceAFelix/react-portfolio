@@ -17,7 +17,7 @@ export const Home = () => {
         <Projects />
         <Contact />
         <Footer />
-      </div>
+      </div >
 
     </>
   )

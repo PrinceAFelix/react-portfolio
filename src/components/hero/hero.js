@@ -1,7 +1,9 @@
-import React, { useState, useEffect, ReactSVG } from 'react'
+import React, { useState, useEffect, ReactSVG, useContext } from 'react'
 import { ReactComponent as ChevronArrow } from '../../assets/chevron-down.svg'
 import classes from './hero.module.css'
 import { Navbar } from '../nav/Navbar'
+
+import PortfolioContext from '../../context/portfolio-context'
 
 
 import logo from '../../assets/logo.png'
@@ -14,36 +16,54 @@ const third = "software developer"
 
 export const Hero = () => {
 
-  const [showPopup, setShowPopup] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
-  const [visibility, setVisibility] = useState(true);
+  const portfolioCtx = useContext(PortfolioContext)
+
+  const [show, setShow] = useState({
+    popUp: false,
+    visibility: true
+  });
+
 
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setShowPopup(true);
+      setShow((prev) => {
+        return { ...prev, popUp: true }
+      });
+      console.log("here")
     }, 2000);
+
     return () => clearTimeout(timer);
 
   }, []);
 
+
+
   const handleVisibility = () => {
-    setVisibility(false);
+    setShow((prev) => {
+      return { ...prev, visibility: false }
+    });
   }
 
   useEffect(() => {
+
     window.addEventListener('scroll', handleScrollY);
     return () => {
       window.removeEventListener('scroll', handleScrollY);
     };
   }, []);
 
+
   const handleScrollY = () => {
-    setScrollY(window.scrollY)
-    if (scrollY === 0) {
-      setShowPopup(true);
-      setVisibility(true);
+    portfolioCtx.onScrollY(window.scrollY)
+    if (portfolioCtx.scrollY <= 10) {
+
+      setShow((prev) => {
+        return { ...prev, popUp: true, visibility: true }
+      });
+
     }
+
   }
 
 
@@ -128,6 +148,8 @@ export const Hero = () => {
     });
   };
 
+
+
   return (
 
 
@@ -169,9 +191,11 @@ export const Hero = () => {
             }
           </div>
         </div>
+
+
         {
-          showPopup && (
-            <div className={`${classes['popup-btn']} ${scrollY >= 1 ? classes.hidden : ''} ${visibility === false ? classes.hidden : ''}`}>
+          show.popUp && (
+            <div className={`${classes['popup-btn']} ${portfolioCtx.scrollY <= 1 ? classes.hidden : ''} ${show.visibility === false ? classes.hidden : ''}`}>
               <a onClick={handleVisibility} href="#about"><ChevronArrow className={`${classes.svg}`} /></a>
             </div>
           )
@@ -179,6 +203,8 @@ export const Hero = () => {
       </div>
     </section >
   )
+
+
 }
 
 

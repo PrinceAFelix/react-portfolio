@@ -35,23 +35,23 @@ export const Projects = () => {
 
                     <ul>
                         <li>
-                            <ProjectLayout img={chatApp} link={"https://github.com/PrinceAFelix/Flutter-Chat-Application"} title={"Chat Application"} description={projectDescription[0]} techList={["Flutter", "Firebase", "Dart"]} />
+                            <ProjectLayout delay={100} img={chatApp} link={"https://github.com/PrinceAFelix/Flutter-Chat-Application"} title={"Chat Application"} description={projectDescription[0]} techList={["Flutter", "Firebase", "Dart"]} />
                         </li>
                         <li>
-                            <ProjectLayout img={weatherAPI} link={"https://princeafelix.github.io/Weather-API/"} title={"Weather API"} description={projectDescription[1]} techList={["HTML", "CSS", " JavaScript", "OpenWeatherAPI"]} />
+                            <ProjectLayout delay={250} img={weatherAPI} link={"https://princeafelix.github.io/Weather-API/"} title={"Weather API"} description={projectDescription[1]} techList={["HTML", "CSS", " JavaScript", "OpenWeatherAPI"]} />
                         </li>
                         <li>
-                            <ProjectLayout img={airsearch} link={"https://github.com/PrinceAFelix/AirSearch"} title={"AirSearch"} description={projectDescription[5]} techList={["React"]} />
+                            <ProjectLayout delay={350} img={airsearch} link={"https://github.com/PrinceAFelix/AirSearch"} title={"AirSearch"} description={projectDescription[5]} techList={["React"]} />
 
                         </li>
                         <li>
-                            <ProjectLayout img={schoolCom} link={"https://github.com/PrinceAFelix/CST8359-NET-Enterprise-Application-Development/tree/main/Assignment2"} title={"School Community MS"} description={projectDescription[3]} techList={["C#", "Razor pages", "Azure"]} />
+                            <ProjectLayout delay={450} img={schoolCom} link={"https://github.com/PrinceAFelix/CST8359-NET-Enterprise-Application-Development/tree/main/Assignment2"} title={"School Community MS"} description={projectDescription[3]} techList={["C#", "Razor pages", "Azure"]} />
                         </li>
                         <li>
-                            <ProjectLayout img={othello} link={"https://github.com/PrinceAFelix/Othello"} title={"Othello"} description={projectDescription[4]} techList={["Java", "Java Swing"]} />
+                            <ProjectLayout delay={550} img={othello} link={"https://github.com/PrinceAFelix/Othello"} title={"Othello"} description={projectDescription[4]} techList={["Java", "Java Swing"]} />
                         </li>
                         <li>
-                            <ProjectLayout img={stacker} link={"https://github.com/PrinceAFelix/Stacker-Game"} title={"Stacker"} description={projectDescription[2]} techList={["Java", "Java Swing"]} />
+                            <ProjectLayout delay={650} img={stacker} link={"https://github.com/PrinceAFelix/Stacker-Game"} title={"Stacker"} description={projectDescription[2]} techList={["Java", "Java Swing"]} />
                         </li>
                     </ul>
                 </div>
