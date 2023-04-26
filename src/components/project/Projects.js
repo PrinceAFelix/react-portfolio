@@ -48,7 +48,7 @@ export const Projects = () => {
                                     <div className={classes['pin-description']} >
                                         <p className={sharedstyle.p}>A cross platform chat application that works with internet connection or bluetooth nearby connection. Sign or Sign up to start communicating, customizing profile, and view active users. Switch to bluetooth mode and start searching for nearby users. </p>
                                     </div>
-                                    <span className={classes['project-tech-list']}>
+                                    <span style={{ justifyContent: 'flex-end' }} className={classes['project-tech-list']}>
                                         <ul className={classes.ul}>
                                             <li>Flutter</li>
                                             <li>Firebase</li>
@@ -74,7 +74,11 @@ export const Projects = () => {
                                     </span>
                                 </div>
                                 <div className={classes['pin-image']} >
-                                    <img className={classes.image} src={discordbot} alt="discord-bot-poster" />
+                                    <div className={classes['image-container']}>
+                                        <div className={classes.overlay} />
+                                        <img className={classes.image} src={discordbot} alt="discord-bot-poster" />
+
+                                    </div>
                                 </div>
 
                             </div>

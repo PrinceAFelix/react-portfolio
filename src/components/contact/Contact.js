@@ -1,24 +1,39 @@
-import React from 'react'
-import './Contact.css'
+import React, { useRef } from 'react'
+import classes from './Contact.module.css'
+import sharedstyle from '../styles/Sharedstyles.module.css'
+
+import Input from '../common/input/Input'
+
+
 
 export const Contact = () => {
+
+  const ref = useRef();
+
+
+
   return (
-    <section class="contact-section" id="contact">
-    <h1 class="section-title center">Get In Touch</h1>
-    <span class="divider center"></span>
-    <div class="contact-content fade">
-      <span>Have a question? Connect with me!</span>
-      <div class="contact-form">
-        <form name="contact" action="https://formspree.io/f/xpzbvyno" method="POST">
-          <input class="inputField" type="text" name="name" id="nameField" for="fname" placeholder="Name" /><br/>
-          <input class="inputField" type="email" name="email" id="emailField" for="email" placeholder="Email"/><br/>
-          <textarea class="inputField" type="text" name="message" id="messageField" for="message" placeholder="Message"></textarea><br/>
-          <input type="submit" id="sendBtn" value="Send"/>
+    <section className={classes['contact-section']} id="contact">
+      <div className={`${classes['section-head']} ${sharedstyle["container"]}`}>
+        <h1 className={classes['section-title']}>Contact me</h1>
+        <span className={sharedstyle["divider"]}></span>
+      </div>
+      <span className={classes['text-zone']}>
+        <p style={{ textAlign: 'center' }} className={sharedstyle.p}>I'm interested in software development opportunities with exciting challenges. Not work-related? That's fine! I'm up for any other questions, so do reach out.</p>
+      </span>
+
+      <div className={classes['form-container']}>
+        <form onSubmit={() => { }}>
+          <div className={classes.join}>
+            <Input inputRef={ref} label="Name" type="text" name="nameinput" />
+            <Input inputRef={ref} label="Email" type="text" name="nameinput" />
+          </div>
+          <Input inputRef={ref} label="Subject" type="text" name="subjectinput" />
+          <Input inputRef={ref} label="Message" type="text" name="messageinput" />
         </form>
       </div>
-    </div>
     </section>
-    
+
   )
 }
 

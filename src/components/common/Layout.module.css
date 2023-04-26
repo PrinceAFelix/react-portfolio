@@ -159,6 +159,7 @@
   background-color: #454545;
   border-radius: 0px 0px 19px 19px;
   padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .project-title {
@@ -206,7 +207,7 @@
 }
 
 .laptop:hover {
-  transform: scale(2);
+  transform: scale(2) translate(5px, -35px);
   z-index: 5;
 }
 
@@ -219,7 +220,7 @@
   width: calc(80% - 80px);
   margin: 0 auto;
 
-  border: 8px solid #5498a4;
+  border: 4px solid #000000;
   border-radius: 15px 15px 0 0;
   transform-origin: center bottom;
   transform: rotateX(-90deg);
@@ -227,6 +228,7 @@
   transition: all 250ms ease-out;
   overflow: hidden;
   visibility: hidden;
+  box-shadow: rgba(208, 198, 198, 0.3) 0px 5px 30px 1px;
 }
 
 .laptop_screen::before {

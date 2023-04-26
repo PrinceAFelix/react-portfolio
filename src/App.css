@@ -8,15 +8,26 @@
 }
 
 html {
+  overflow-x: hidden;
+  overflow-y: scroll;
   scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 25px;
+  background-color: #4d8fa266;
+}
+
 body {
-  overflow-y: scroll;
-  overflow-x: hidden;
-  transition: all 0.5s ease;
   background-color: #1b1b1b;
   color: #ffff;
+  transition: all 500ms ease-in;
 }
 
 @media all and (max-width: 430px) {
