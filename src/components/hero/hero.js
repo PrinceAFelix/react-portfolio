@@ -26,11 +26,11 @@ export const Hero = () => {
 
 
   useEffect(() => {
+    portfolioCtx.onScrollY(0)
     const timer = setTimeout(() => {
       setShow((prev) => {
         return { ...prev, popUp: true }
       });
-      console.log("here")
     }, 2000);
 
     return () => clearTimeout(timer);
@@ -46,17 +46,18 @@ export const Hero = () => {
   }
 
   useEffect(() => {
-
+    console.log(portfolioCtx.scrollY)
     window.addEventListener('scroll', handleScrollY);
+    console.log(portfolioCtx.scrollY)
     return () => {
       window.removeEventListener('scroll', handleScrollY);
     };
-  }, []);
+  }, [window.scrollY]);
 
 
   const handleScrollY = () => {
     portfolioCtx.onScrollY(window.scrollY)
-    if (portfolioCtx.scrollY <= 10) {
+    if (portfolioCtx.scrollY === 0) {
 
       setShow((prev) => {
         return { ...prev, popUp: true, visibility: true }
@@ -65,6 +66,7 @@ export const Hero = () => {
     }
 
   }
+
 
 
   const [isMouseEnter, setIsMouseEnter] = useState(
@@ -195,7 +197,7 @@ export const Hero = () => {
 
         {
           show.popUp && (
-            <div className={`${classes['popup-btn']} ${portfolioCtx.scrollY <= 1 ? classes.hidden : ''} ${show.visibility === false ? classes.hidden : ''}`}>
+            <div className={`${classes['popup-btn']} ${portfolioCtx.scrollY >= 1 ? classes.hidden : ''} ${show.visibility === false ? classes.hidden : ''}`}>
               <a onClick={handleVisibility} href="#about"><ChevronArrow className={`${classes.svg}`} /></a>
             </div>
           )

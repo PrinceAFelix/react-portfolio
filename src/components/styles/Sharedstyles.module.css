@@ -53,3 +53,8 @@
   letter-spacing: 1px;
   word-spacing: 1px;
 }
+
+.project-title {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+}

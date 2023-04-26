@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useEffect, useContext, useRef } from 'react'
 import sharedstyle from '../styles/Sharedstyles.module.css'
 import classes from './Layout.module.css'
 
@@ -24,21 +24,42 @@ const ProjectLayout = (props) => {
     }
 
 
-    useEffect(() => {
+    const targetRef = useRef(null);
+    const [isIntersecting, setIsIntersecting] = useState(false);
 
-        if (portfolioCtx.scrollY >= 2200) {
-            const timer = setTimeout(() => {
-                setOnOpen(true);
-            }, props.delay);
-            return () => clearTimeout(timer);
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsIntersecting(entry.isIntersecting);
+                if (entry.isIntersecting) {
+                    const timer = setTimeout(() => {
+                        setOnOpen(true);
+                    }, props.delay);
+                    return () => clearTimeout(timer);
+                }
+            },
+            { threshold: 0.5 }
+        );
+
+        if (targetRef.current) {
+            observer.observe(targetRef.current);
         }
 
-    }, [portfolioCtx.scrollY])
+        return () => {
+            if (targetRef.current) {
+                observer.unobserve(targetRef.current);
+            }
+        };
+    }, [targetRef]);
 
-
-
+    const screenStyle = {
+        backgroundImage: `url(${props.img})`,
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+    }
     return (
-        <div className={classes['project-container']}>
+        <div ref={targetRef} className={classes['project-container']}>
 
             {/* <a href={props.link} target='_blank'>
                 <div onMouseEnter={handSetActive} onMouseLeave={handSetNotActive} className={classes['image-wrapper']}>
@@ -46,8 +67,10 @@ const ProjectLayout = (props) => {
                 </div>
             </a> */}
 
+            {
+            }
             <div onClick={handSetOnClick} className={classes.laptop}>
-                <div className={`${classes['laptop_screen']} ${onOpen ? classes['laptop-open'] : ''}`}></div>
+                <div style={screenStyle} className={`${classes['laptop_screen']} ${onOpen ? classes['laptop-open'] : ''}`}></div>
                 <div className={`${classes['laptop-base']} ${onOpen ? classes['open'] : ''}`}></div>
             </div>
 

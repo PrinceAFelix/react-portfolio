@@ -72,18 +72,25 @@
 }
 
 .surface {
-  position: absolute;
-  background: rgb(0, 0, 0);
-  background: radial-gradient(
-    circle,
-    rgba(0, 0, 0, 0.773546918767507) 0%,
-    rgba(213, 213, 213, 1) 75%
-  );
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+
   clip-path: polygon(50% 0, 100% 100%, 0 100%);
   width: 320px;
   height: 70px;
   transform: translateY(-222px);
   z-index: -1;
+}
+
+.surface::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(transparent, white);
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
 }
 
 /* .img {
@@ -170,15 +177,15 @@
   padding: 0;
   margin: 0;
   display: flex;
-  justify-content: flex-start; /* or center, space-between, etc. */
+  justify-content: flex-start;
 }
 
 .span .ul li {
   font-size: 13px;
   font-family: "Inter", sans-serif;
+  opacity: 0.4;
   font-style: italic;
   margin-right: 20px;
-  opacity: 0.4;
 }
 
 .p {
@@ -187,12 +194,20 @@
 }
 
 .laptop {
+  position: relative;
   height: auto;
   width: 100%;
   margin: 0 auto;
   perspective-origin: 50% 100%;
   perspective: 1000px;
+  z-index: 5;
   transform: translate(10px, -30px);
+  transition: all 250ms ease-out;
+}
+
+.laptop:hover {
+  transform: scale(2);
+  z-index: 5;
 }
 
 .laptop_screen {
@@ -203,15 +218,7 @@
   min-width: 130px;
   width: calc(80% - 80px);
   margin: 0 auto;
-  background-color: white;
-  background-image: linear-gradient(
-    45deg,
-    rgba(245, 165, 236, 0.4) 0%,
-    rgba(255, 206, 247, 0.7) 34%,
-    rgba(254, 220, 248, 1) 47%,
-    rgba(249, 222, 244, 1) 63%,
-    rgba(249, 222, 244, 1) 100%
-  );
+
   border: 8px solid #5498a4;
   border-radius: 15px 15px 0 0;
   transform-origin: center bottom;
@@ -219,6 +226,7 @@
   transform-style: preserve-3d;
   transition: all 250ms ease-out;
   overflow: hidden;
+  visibility: hidden;
 }
 
 .laptop_screen::before {
@@ -232,6 +240,7 @@
 
 .laptop-open {
   transform: rotateX(0deg);
+  visibility: visible;
 }
 
 .laptop-base::before {
@@ -265,7 +274,9 @@
   border-radius: 0px 0px 10px 10px;
   left: 50%;
   transform: translate(-50%, 1px);
-  box-shadow: rgba(0, 0, 0, 0.35) 0px -10px 26px -5px inset;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px -10px 26px -5px inset,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .open {

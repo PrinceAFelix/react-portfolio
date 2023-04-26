@@ -1,6 +1,6 @@
 .project-section {
   width: 900px;
-  height: 1350px;
+  height: 2000px;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
@@ -107,4 +107,128 @@
   .project-list {
     grid-template-columns: repeat(1, 20%);
   }
+}
+
+.project-pin {
+  position: relative;
+  width: auto;
+  height: auto;
+  margin-bottom: 5%;
+}
+
+.pin-container {
+  position: relative;
+  display: flex;
+  display: inline-flex;
+  width: auto;
+  height: auto;
+  align-items: center;
+}
+
+.pin-image {
+  position: relative;
+  width: auto;
+  height: auto;
+  border-radius: 25px;
+  z-index: 0;
+  transition: all 0.3s ease-out;
+}
+
+.pin-image:hover {
+  z-index: 999;
+}
+.pin-image:hover video {
+  transform: scaleY(1.2) rotate(-10deg);
+}
+
+.pin-image:hover .image {
+  transform: scaleY(1.2) rotate(10deg);
+}
+
+video {
+  margin: 0;
+  line-height: 1;
+  border: none;
+  transition: all 0.3s ease-out;
+}
+
+.image {
+  margin: 0;
+  line-height: 1;
+  border: none;
+  transition: all 0.3s ease-out;
+  width: 400px;
+  height: auto;
+  border-radius: 20px;
+}
+
+.description-container {
+  text-align: right;
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.pin-description {
+  padding: 10px;
+  background-color: #363636;
+  border-radius: 10px;
+  z-index: 1;
+  top: 100%;
+  text-align: left;
+  padding: 20px;
+  width: 400px;
+}
+
+.pin-description p {
+  font-size: 14px;
+  text-align: right;
+  width: auto;
+}
+
+.pin-container > div:nth-child(1) {
+  transform: translateX(25px);
+}
+.project-pin ul li:nth-of-type(2) .pin-container .pin-image,
+.pin-container > div:nth-child(2) {
+  transform: translateX(-25px);
+}
+.project-pin
+  ul
+  li:nth-of-type(2)
+  .pin-container
+  > div:nth-child(1)
+  .pin-description
+  p,
+.project-pin ul li:nth-of-type(2) .pin-container > div:nth-child(1) {
+  text-align: left;
+  z-index: 2;
+}
+
+.project-pin ul li:nth-of-type(2) .pin-container {
+  transform: translateY(-70px);
+}
+
+.project-tech-list {
+  position: relative;
+  display: flex;
+  height: auto;
+}
+
+.project-tech-list .ul {
+  position: relative;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.project-tech-list .ul li {
+  font-size: 13px;
+  font-family: "Inter", sans-serif;
+  opacity: 0.4;
+  font-style: italic;
+  margin: 0px 5px 0px 0px;
 }

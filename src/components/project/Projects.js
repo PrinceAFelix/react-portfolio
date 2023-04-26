@@ -2,12 +2,14 @@ import React from 'react'
 import classes from './Project.module.css'
 import sharedstyle from '../styles/Sharedstyles.module.css'
 
-import chatApp from '../../assets/chatapp.png';
-import weatherAPI from '../../assets/weather.png';
-import stacker from '../../assets/stacker.png';
-import schoolCom from '../../assets/schoolcom1.png';
-import othello from '../../assets/othello.png'
-import airsearch from '../../assets/airsearch1.png'
+import chatApp from '../../assets/chatapp.svg';
+import weatherAPI from '../../assets/weatherapi.svg';
+import stacker from '../../assets/stacker.svg';
+import schoolCom from '../../assets/schoolcom.svg';
+import othello from '../../assets/othello.svg'
+import airsearch from '../../assets/airsearch.svg'
+import discordbot from '../../assets/discordbot.svg'
+import caoutprvw from '../../assets/caout.webm'
 
 import ProjectLayout from '../common/ProjectLayout'
 
@@ -31,6 +33,54 @@ export const Projects = () => {
             </div>
 
             <div className={classes["project-content"]}>
+                <div className={classes['project-pin']}>
+                    <ul>
+                        <li>
+                            <div className={classes['pin-container']}>
+                                <div className={classes['pin-image']} >
+                                    <video width="250px" height="auto" preload="false" playsinline="" class="elementor-video" autoplay="" loop muted="muted" controlslist="nodownload" >
+                                        <source src={caoutprvw} type="video/mp4" />
+                                    </video>
+
+                                </div>
+                                <div className={classes['description-container']}>
+                                    <h1 className={sharedstyle['project-title']}>Chat Application</h1>
+                                    <div className={classes['pin-description']} >
+                                        <p className={sharedstyle.p}>A cross platform chat application that works with internet connection or bluetooth nearby connection. Sign or Sign up to start communicating, customizing profile, and view active users. Switch to bluetooth mode and start searching for nearby users. </p>
+                                    </div>
+                                    <span className={classes['project-tech-list']}>
+                                        <ul className={classes.ul}>
+                                            <li>Flutter</li>
+                                            <li>Firebase</li>
+                                            <li>Dart</li>
+                                        </ul>
+                                    </span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div className={classes['pin-container']}>
+                                <div className={classes['description-container']}>
+                                    <h1 className={sharedstyle['project-title']}>Discord Bot</h1>
+                                    <div className={classes['pin-description']} >
+                                        <p className={sharedstyle.p}>A cross platform chat application that works with internet connection or bluetooth nearby connection. Sign or Sign up to start communicating, customizing profile, and view active users. Switch to bluetooth mode and start searching for nearby users. </p>
+                                    </div>
+                                    <span className={classes['project-tech-list']}>
+                                        <ul className={classes.ul}>
+                                            <li>JavaScript</li>
+                                            <li>NodeJs</li>
+                                            <li>Firebase</li>
+                                        </ul>
+                                    </span>
+                                </div>
+                                <div className={classes['pin-image']} >
+                                    <img className={classes.image} src={discordbot} alt="discord-bot-poster" />
+                                </div>
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
                 <div className={classes["project-list"]}>
 
                     <ul>
