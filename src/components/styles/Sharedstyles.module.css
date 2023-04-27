@@ -10,6 +10,7 @@
   padding-top: 100px;
   font-family: "Mitr", sans-serif;
   font-size: 30px;
+  filter: drop-shadow(-2px 5px 3px rgba(0, 0, 0, 0.768));
 }
 
 .section-title::after {
@@ -57,4 +58,5 @@
 .project-title {
   font-family: "Inter", sans-serif;
   font-size: 20px;
+  filter: drop-shadow(-2px 5px 3px rgba(0, 0, 0, 0.768));
 }

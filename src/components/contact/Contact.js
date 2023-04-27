@@ -1,14 +1,62 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState, useContext, useEffect } from 'react'
 import classes from './Contact.module.css'
 import sharedstyle from '../styles/Sharedstyles.module.css'
 
 import Input from '../common/input/Input'
-
+import PortfolioContext from '../../context/portfolio-context'
 
 
 export const Contact = () => {
 
-  const ref = useRef();
+
+  const portfolioCtx = useContext(PortfolioContext)
+
+  const nameref = useRef();
+  const emailref = useRef();
+  const subjectref = useRef();
+  const messageref = useRef();
+
+  const [contactForm, setContactForm] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  })
+
+
+  const onInputChange = (e) => {
+    const { name, value } = e.target
+    setContactForm((prev) => ({
+      ...prev,
+      [name]: value
+    }))
+  }
+
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      portfolioCtx.onSubmitForm({ name: contactForm.name, email: contactForm.email, subject: contactForm.subject, message: contactForm.message })
+    }, 500)
+
+    return () => clearTimeout(timer)
+
+  }, [contactForm])
+
+
+  const handleSubmitForm = (e) => {
+    e.preventDefault();
+
+    setContactForm({
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
+    })
+    //Handle Email Sender api
+
+  }
+
+
 
 
 
@@ -23,13 +71,17 @@ export const Contact = () => {
       </span>
 
       <div className={classes['form-container']}>
-        <form onSubmit={() => { }}>
+        <form onSubmit={handleSubmitForm}>
           <div className={classes.join}>
-            <Input inputRef={ref} label="Name" type="text" name="nameinput" />
-            <Input inputRef={ref} label="Email" type="text" name="nameinput" />
+            <Input onChange={onInputChange} value={contactForm.name} inputRef={nameref} label="Name" type="text" name="name" />
+            <Input onChange={onInputChange} value={contactForm.email} inputRef={emailref} label="Email" type="text" name="email" />
           </div>
-          <Input inputRef={ref} label="Subject" type="text" name="subjectinput" />
-          <Input inputRef={ref} label="Message" type="text" name="messageinput" />
+          <Input onChange={onInputChange} value={contactForm.subject} inputRef={subjectref} label="Subject" type="text" name="subject" />
+          <Input onChange={onInputChange} value={contactForm.message} inputRef={messageref} label="Message" type="textarea" name="message" />
+
+          <button className={classes.button} type="submit">
+            Send! ツ
+          </button>
         </form>
       </div>
     </section>

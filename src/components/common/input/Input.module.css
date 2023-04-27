@@ -4,26 +4,33 @@
 
 .label {
   position: absolute;
-  font-size: 12px;
+  font-size: 14px;
   color: #ffffff80;
   font-family: "Inter", sans-serif;
-  transform: translate(25px, 30px);
+  transform: translate(25px, 27px);
+  transition: all 250ms ease-in;
 }
 
+.focus {
+  font-size: 12px;
+  transform: translate(15px, 10px);
+  color: #ffffff4d;
+}
+
+.textarea,
 .Input {
-  padding: 15px 45px 15px 45px;
+  padding: 15px 20px 15px 20px;
   font-size: 14px;
-  width: 450px;
-  height: 30px;
   border-radius: 10px;
   margin: 5px;
   text-align: left;
   border: none;
   background-color: #303030;
   color: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
-
-.Input:focus {
+£ .Input:focus {
   outline: none;
   box-shadow: none;
 }
@@ -31,4 +38,11 @@
 .Input.empty {
   color: rgba(0, 0, 0, 0.3);
   font-weight: 100;
+}
+
+.textarea {
+  resize: none;
+  width: 580px;
+  height: 150px;
+  padding: 25px 20px 15px 20px;
 }

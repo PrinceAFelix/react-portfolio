@@ -1,6 +1,6 @@
 .contact-section {
   width: 50%;
-  height: 500px;
+  height: 600px;
   background-color: #1b1b1b;
   /* background-color: rgb(3, 74, 162); */
   color: rgb(255, 255, 255);
@@ -47,4 +47,38 @@
 
 .join {
   display: flex;
+}
+
+.button {
+  position: relative;
+  width: 150px;
+  height: 55px;
+  color: #00f0ff;
+  font-size: 18px;
+  background-color: transparent;
+  border: 2px solid #00f0ff;
+  right: -85px;
+  border-radius: 4px;
+  transform: translate(100%, 20px);
+  cursor: pointer;
+
+  background: linear-gradient(
+    to left,
+    #1b1b1b,
+    #1b1b1b 50%,
+    #00f0ff 50%,
+    #00f0ff
+  );
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: color 1s ease-out, background 500ms ease-out,
+    box-shadow 200ms ease-in;
+}
+
+.button:hover {
+  color: #1b1b1b;
+  background-position: left bottom;
+  box-shadow: #00f0ff 0px 2px 4px 0px, #00f0ff 0px 2px 16px 0px;
+  transition: color 1s ease-in, background 500ms ease-out,
+    box-shadow 200ms ease-in;
 }
