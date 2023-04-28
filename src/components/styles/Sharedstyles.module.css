@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap");
 
 .container {
+  position: relative;
   max-width: fit-content;
 }
 
@@ -32,6 +33,19 @@
   right: 0px;
 }
 
+@media (max-width: 430px) {
+  .end-section,
+  .section-title::after {
+    width: 150px;
+  }
+
+  .container {
+    width: auto;
+    height: auto;
+    left: 25px;
+  }
+}
+
 .divider {
   display: flex;
   margin: 10px 0;
@@ -47,7 +61,7 @@
 }
 
 .p {
-  width: 500px;
+  width: 100%;
   text-align: left;
   font-size: 18px;
   font-family: "Source Sans Pro", sans-serif;

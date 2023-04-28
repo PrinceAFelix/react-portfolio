@@ -150,7 +150,7 @@ video {
   line-height: 1;
   border: none;
   transition: all 0.3s ease-out;
-  filter: drop-shadow(-10px 10px 15px rgba(0, 0, 0, 0.67));
+  filter: drop-shadow(-10px 10px 15px #000000ab);
 }
 
 .image-container {

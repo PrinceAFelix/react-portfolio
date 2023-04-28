@@ -231,7 +231,7 @@
   transition: all 250ms ease-out;
   overflow: hidden;
   visibility: hidden;
-  box-shadow: rgba(208, 198, 198, 0.3) 0px 5px 30px 1px;
+  box-shadow: #d0c6c64d 0px 5px 30px 1px;
 }
 
 .laptop_screen::before {

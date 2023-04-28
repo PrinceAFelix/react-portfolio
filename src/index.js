@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import PortfolioContextProvider from './context/ContextProvider';
+import GlobalStyle from './components/styles/GlobalStyle';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <PortfolioContextProvider>
+    <GlobalStyle />
     <App />
   </PortfolioContextProvider>
 );

@@ -63,7 +63,7 @@ export const Projects = () => {
                                 <div className={classes['description-container']}>
                                     <h1 className={sharedstyle['project-title']}>Discord Bot</h1>
                                     <div className={classes['pin-description']} >
-                                        <p className={sharedstyle.p}>A cross platform chat application that works with internet connection or bluetooth nearby connection. Sign or Sign up to start communicating, customizing profile, and view active users. Switch to bluetooth mode and start searching for nearby users. </p>
+                                        <p className={sharedstyle.p}>Built and construct a bot for Uncle Tetsu Ottawa to automate simple tasks. Calculates how many products it needs for a specific number of needs. Add/Remove in a todo run by Firebase, and more features to be implemented. </p>
                                     </div>
                                     <span className={classes['project-tech-list']}>
                                         <ul className={classes.ul}>

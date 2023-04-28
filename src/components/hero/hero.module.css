@@ -21,7 +21,7 @@
 
 .h1 {
   white-space: pre-wrap;
-  font-size: 77px;
+  font-size: var(--font-l);
   font-family: "Open Sans", sans-serif;
 }
 
@@ -29,6 +29,7 @@
   font-family: "Jura", sans-serif;
   font-size: 25px;
   margin-left: 5px;
+  text-align: left;
 }
 
 .second {
@@ -45,13 +46,39 @@
   transform: translateY(-20px);
 }
 
+@media (max-width: 430px) {
+  .h1 {
+    transform: translate(6%, 20%);
+  }
+
+  .first {
+    font-size: var(--font-xs);
+  }
+
+  .second {
+    font-size: calc(var(--font-s) + 5px);
+  }
+  .third {
+    transform: translateY(-60px);
+    font-size: calc(var(--font-s));
+  }
+}
+
 .content span {
   filter: drop-shadow(-5px 5px 3px rgba(0, 0, 0, 0.768));
 }
+
 .big-initial {
   width: 90px;
   height: auto;
   transform: translate(10px, -8px);
+}
+
+@media (max-width: 430px) {
+  .big-initial {
+    width: var(--font-m);
+    transform: translate(10px, -15px);
+  }
 }
 
 @keyframes rubberBand {
