@@ -57,10 +57,11 @@ export const Skills = () => {
                     <span className={sharedstyle["divider"]}></span>
                 </div>
                 <div className={classes["skill-content"]}>
-
-                    <SkillLayout title="Programming Language" p={p} />
-                    <SkillLayout title="Frameworks & BaaS" p={p1} />
-                    <SkillLayout title="Tools" p={p2} />
+                    <ul>
+                        <li><SkillLayout title="Programming Language" p={p} /></li>
+                        <li><SkillLayout title="Frameworks & BaaS" p={p1} /></li>
+                        <li><SkillLayout title="Tools" p={p2} /></li>
+                    </ul>
 
 
                 </div>
@@ -69,7 +70,7 @@ export const Skills = () => {
                         <div className={`${classes['expereince-content']}`}>
                             <h1 className={layout.title}>Mobile Application Development</h1>
                             <span className={layout.description}>
-                                <p className={sharedstyle.p}>Design and develop a cross platform chat application that works with internet connection and blueetoth nearby connection.</p>
+                                <p className={sharedstyle.p}>Design and develop a cross platform chat application that works with internet connection and bluetooth nearby connection.</p>
                             </span>
                         </div>
                         <div className={classes['tech-list-container']}>
@@ -92,6 +93,7 @@ export const Skills = () => {
                         <Chart title="Java" cover="95%" color="#2efce9" />
                         <Chart title="ReactJS" cover="75%" color="#2efce9" />
                     </div>
+                    {/* style={{ position: 'absolute', right: '0px', transform: 'translateX(-50px)' }} */}
                 </div>
                 <div className={sharedstyle['end-section']} />
             </section>

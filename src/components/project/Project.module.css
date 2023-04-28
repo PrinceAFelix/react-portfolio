@@ -114,9 +114,6 @@
 }
 
 .project-pin {
-  position: relative;
-  width: auto;
-  height: auto;
   margin-bottom: 5%;
 }
 
@@ -219,6 +216,7 @@ video {
 }
 
 .project-pin ul {
+  display: block;
   list-style: none;
 }
 
