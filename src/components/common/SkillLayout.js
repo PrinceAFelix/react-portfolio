@@ -13,6 +13,8 @@ const SkillLayout = (props) => {
             </div>
         </div>
 
+
+
     )
 }
 

@@ -27,6 +27,7 @@ html {
 body {
   margin: 0;
   width: 100%;
+  height: auto;
   background-color: #1b1b1b;
   color: #ffff;
   transition: all 500ms ease-in;
@@ -48,5 +49,6 @@ body {
   body {
     overflow: hidden;
     width: auto;
+    height: auto;
   }
 }

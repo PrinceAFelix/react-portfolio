@@ -34,8 +34,8 @@ export const Projects = () => {
 
             <div className={classes["project-content"]}>
                 <div className={classes['project-pin']}>
-                    <ul>
-                        <li>
+                    <ul className={classes['main-ul']}>
+                        <li className={classes['main-li']}>
                             <div className={classes['pin-container']}>
                                 <div className={classes['pin-image']} >
                                     <video width="250px" height="auto" preload="false" playsinline="" class="elementor-video" autoplay="" loop muted="muted" controlslist="nodownload" >
@@ -43,12 +43,12 @@ export const Projects = () => {
                                     </video>
 
                                 </div>
-                                <div className={classes['description-container']}>
+                                <div className={`${classes['description-container']} ${classes.itemone} `}>
                                     <h1 className={sharedstyle['project-title']}>Chat Application</h1>
                                     <div className={classes['pin-description']} >
                                         <p className={sharedstyle.p}>A cross platform chat application that works with internet connection or bluetooth nearby connection. Sign or Sign up to start communicating, customizing profile, and view active users. Switch to bluetooth mode and start searching for nearby users. </p>
                                     </div>
-                                    <span style={{ justifyContent: 'flex-end' }} className={classes['project-tech-list']}>
+                                    <span style={{ justifyContent: 'flex-end' }} className={`${classes['project-tech-list']} ${classes.listone}`}>
                                         <ul className={classes.ul}>
                                             <li>Flutter</li>
                                             <li>Firebase</li>
@@ -56,16 +56,18 @@ export const Projects = () => {
                                         </ul>
                                     </span>
                                 </div>
+
                             </div>
                         </li>
-                        <li>
-                            <div className={classes['pin-container']}>
-                                <div className={classes['description-container']}>
+
+                        <li className={classes['main-li']}>
+                            <div className={`${classes['pin-container']} `}>
+                                <div className={`${classes['description-container']} ${classes.itemtwo} `}>
                                     <h1 className={sharedstyle['project-title']}>Discord Bot</h1>
                                     <div className={classes['pin-description']} >
                                         <p className={sharedstyle.p}>Built and construct a bot for Uncle Tetsu Ottawa to automate simple tasks. Calculates how many products it needs for a specific number of needs. Add/Remove in a todo run by Firebase, and more features to be implemented. </p>
                                     </div>
-                                    <span className={classes['project-tech-list']}>
+                                    <span className={`${classes['project-tech-list']} ${classes.listtwo}`}>
                                         <ul className={classes.ul}>
                                             <li>JavaScript</li>
                                             <li>NodeJs</li>
@@ -87,24 +89,24 @@ export const Projects = () => {
                 </div>
                 <div className={classes["project-list"]}>
 
-                    <ul>
-                        <li>
+                    <ul className={classes["project-ul"]}>
+                        <li className={classes["project-li"]}>
                             <ProjectLayout delay={100} img={chatApp} link={"https://github.com/PrinceAFelix/Flutter-Chat-Application"} title={"Chat Application"} description={projectDescription[0]} techList={["Flutter", "Firebase", "Dart"]} />
                         </li>
-                        <li>
+                        <li className={classes["project-li"]}>
                             <ProjectLayout delay={250} img={weatherAPI} link={"https://princeafelix.github.io/Weather-API/"} title={"Weather API"} description={projectDescription[1]} techList={["HTML", "CSS", " JavaScript", "OpenWeatherAPI"]} />
                         </li>
-                        <li>
+                        <li className={classes["project-li"]}>
                             <ProjectLayout delay={350} img={airsearch} link={"https://github.com/PrinceAFelix/AirSearch"} title={"AirSearch"} description={projectDescription[5]} techList={["React"]} />
 
                         </li>
-                        <li>
+                        <li className={classes["project-li"]}>
                             <ProjectLayout delay={450} img={schoolCom} link={"https://github.com/PrinceAFelix/CST8359-NET-Enterprise-Application-Development/tree/main/Assignment2"} title={"School Community MS"} description={projectDescription[3]} techList={["C#", "Razor pages", "Azure"]} />
                         </li>
-                        <li>
+                        <li className={classes["project-li"]}>
                             <ProjectLayout delay={550} img={othello} link={"https://github.com/PrinceAFelix/Othello"} title={"Othello"} description={projectDescription[4]} techList={["Java", "Java Swing"]} />
                         </li>
-                        <li>
+                        <li className={classes["project-li"]}>
                             <ProjectLayout delay={650} img={stacker} link={"https://github.com/PrinceAFelix/Stacker-Game"} title={"Stacker"} description={projectDescription[2]} techList={["Java", "Java Swing"]} />
                         </li>
                     </ul>
