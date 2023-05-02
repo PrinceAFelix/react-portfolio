@@ -20,6 +20,8 @@
 }
 
 .h1 {
+  width: 100%;
+  max-width: 770px;
   white-space: pre-wrap;
   font-size: var(--font-l);
   font-family: "Open Sans", sans-serif;
@@ -27,7 +29,7 @@
 
 .first {
   font-family: "Jura", sans-serif;
-  font-size: 25px;
+  font-size: clamp(1.25rem, 0.8594rem + 1.25vw, 1.5625rem);
   margin-left: 5px;
   text-align: left;
 }
@@ -36,18 +38,20 @@
   display: flex;
   display: inline-flex;
   transform: translate(-30px, 10px);
+  font-size: clamp(1.875rem, -1.6406rem + 11.25vw, 4.6875rem);
 }
 
 .third {
   display: flex;
   display: inline-flex;
   opacity: 0.5;
-  font-size: 70px;
+  font-size: clamp(1.875rem, -1.25rem + 10vw, 4.375rem);
   transform: translateY(-20px);
 }
 
 @media (max-width: 430px) {
   .h1 {
+    width: 100%;
     transform: translate(6%, 20%);
   }
 

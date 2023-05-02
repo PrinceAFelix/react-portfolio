@@ -67,7 +67,7 @@
 .p {
   width: 100%;
   text-align: left;
-  font-size: 18px;
+  font-size: clamp(0.875rem, 0.5625rem + 1vw, 1.125rem);
   font-family: "Source Sans Pro", sans-serif;
   letter-spacing: 1px;
   word-spacing: 1px;

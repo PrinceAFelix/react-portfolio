@@ -1,105 +1,96 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap");
 
-.skill-section {
-  width: 900px;
-  height: 850px;
-  position: relative;
+ul {
   display: block;
-  display: inline-block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
 }
-
-@media (min-width: 430px) {
-  .skill-section {
-    width: auto;
-    height: auto;
-    padding: 0px 20px 0px 20px;
-  }
+.skill-section {
+  max-width: 100vh;
+  height: auto;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 }
 
 .skill-content {
-  display: flex;
-  flex-wrap: wrap;
+  width: 100%;
+  max-width: 950px;
+  position: relative;
+  left: 20px;
 }
 
 .skill-content ul {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0;
-  padding: 0;
+  width: 100%;
+  max-width: 950px;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  list-style-type: disc;
 }
 
 .skill-content ul li {
-  flex-basis: calc(33.33% - 20px);
-  margin: 10px;
-  border-radius: 5px;
-  text-align: center;
-}
-
-@media screen and (max-width: 768px) {
-  .skill-content ul li {
-    flex-basis: calc(50% - 20px);
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .skill-content ul li {
-    flex-basis: calc(100% - 20px);
-  }
-
-  .skill-content {
-    padding: 50px;
-    width: 100%;
-  }
-  .skill-content ul {
-    grid-template-columns: 1fr;
-    width: 100%;
-    row-gap: 0px;
-  }
-
-  .skill-content ul li {
-    margin-top: -80px;
-  }
-}
-
-@media (max-width: 430px) {
-  .skill-content {
-    position: relative;
-    width: 100%;
-    display: flex;
-    display: inline-flex;
-    justify-content: center;
-    margin-bottom: 100px;
-    transform: translate(-40px, 50px);
-  }
-  .skill-content ul li,
-  .skill-content ul {
-    width: 100%;
-    height: 100%;
-  }
-
-  .skill-content ul li {
-    margin-bottom: 100px;
-  }
+  list-style: none;
+  display: list-item;
+  margin: 20px 20px 0px 20px;
 }
 
 .inner {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
   display: grid;
-  grid-template-columns: 0.5fr 0.5fr;
-  width: auto;
-  max-width: 1100px;
-  transform: translateY(-100px);
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  justify-content: center;
+  padding: 0px;
+  margin: 0px;
+  gap: 20px;
+}
+
+@media (max-width: 1050px) {
+  .skill-content {
+    transform: translateX(-20px);
+  }
+  .inner {
+    width: 91%;
+    left: 20px;
+    transform: translateX(0px);
+    right: 20px;
+  }
+}
+
+@media (max-width: 780px) {
+  .inner {
+    gap: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .inner {
+    gap: 50px;
+  }
+}
+
+@media (max-width: 378px) {
+  .inner {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    width: 91%;
+  }
 }
 
 .expereince-container {
   position: relative;
-  width: auto;
-  right: 50px;
+  box-sizing: border-box;
 }
 
 .expereince-content {
-  width: 480px;
-  max-width: 480px;
-  height: auto;
   background-color: #363636;
   padding: 20px;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
@@ -107,57 +98,32 @@
 
 .tech-list-container {
   position: relative;
-  display: flex;
-  width: 420px;
-  transform: translateX(100px);
-  max-width: 520px;
-  height: auto;
+  width: 100%;
   background-color: #363636;
   margin-top: 10px;
 }
 
-@media (max-width: 430px) {
-  .inner {
-    display: block;
-    position: relative;
-    width: 41%;
-    margin: 0px;
-    padding-left: 80px;
-    transform: translateY(-150px);
-  }
-
-  .expereince-content {
-    width: auto;
-  }
-
-  .expereince-container {
-    width: auto;
-  }
-
-  .tech-list-container {
-    width: auto;
-    margin-bottom: 50px;
-  }
-}
-
 .tech-list {
   width: 100%;
-  display: flex;
+  display: inline-block;
   justify-content: flex-end;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .tech-list ul {
   list-style: none;
-  display: flex;
-  justify-content: right;
-  align-items: right;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 0px;
+  margin: 0px;
 }
 
 .tech-list ul li {
-  font-size: 18px;
+  font-size: clamp(0.875rem, 0.5625rem + 1vw, 1.125rem);
   font-family: "Inter", sans-serif;
   font-style: italic;
+  padding: 0px;
+  margin: 0px;
 }
 
 .linkIcon {
@@ -173,8 +139,6 @@
 .graph {
   position: relative;
   text-align: left;
-  width: 700px;
-  max-width: 700px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -204,45 +168,4 @@
 .bar-child {
   height: 5px;
   border-radius: 5px;
-}
-
-@media (max-width: 69.3125em) {
-  .inner {
-    grid-template-columns: 1fr;
-    gap: 50px;
-  }
-
-  .tech-list-container {
-    width: 100%;
-    transform: translateX(0);
-  }
-  .graph {
-    width: 100%;
-    transform: translateX(-50px);
-    margin-bottom: 50px;
-  }
-  .expereince-container {
-    display: block;
-    width: 100%;
-  }
-}
-
-@media (max-width: 430px) {
-  .graph {
-    width: 100%;
-    margin: 0px;
-    padding: 0px;
-    gap: 15px;
-    margin-bottom: 50px;
-  }
-
-  .skill-section {
-    height: 100%;
-    padding-bottom: 50px;
-  }
-
-  .end {
-    transform: translate(25vh, -15vh);
-    position: relative;
-  }
 }
