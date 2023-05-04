@@ -69,20 +69,18 @@
 }
 
 .project-container {
-  width: 300px;
-  height: 220px;
+  width: 100%;
+  height: 100%;
   border-radius: 20px;
 }
 
 .surface {
   position: relative;
   background: rgba(0, 0, 0, 0.5);
-
   clip-path: polygon(50% 0, 100% 100%, 0 100%);
-  width: 320px;
+  width: 100%;
   height: 70px;
   transform: translateY(-222px);
-  z-index: -1;
 }
 
 .surface::after {
@@ -154,14 +152,14 @@
 }
 
 .project-details {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 100%;
-  height: 60%;
+  height: 100%;
+  padding: 10px;
   background-color: #454545;
   border-radius: 0px 0px 19px 19px;
-  padding: 10px;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
@@ -183,6 +181,7 @@
   margin: 0;
   display: flex;
   justify-content: flex-start;
+  gap: 15px;
 }
 
 .span .ul li {
@@ -190,12 +189,12 @@
   font-family: "Inter", sans-serif;
   opacity: 0.4;
   font-style: italic;
-  margin-right: 20px;
 }
 
 .p {
   font-size: 14px;
-  width: auto;
+  width: 100%;
+  height: 85px;
 }
 
 .laptop {
@@ -206,7 +205,7 @@
   perspective-origin: 50% 100%;
   perspective: 1000px;
   z-index: 5;
-  transform: translate(10px, -30px);
+  transform: translate(0px, -30px);
   transition: all 250ms ease-out;
 }
 

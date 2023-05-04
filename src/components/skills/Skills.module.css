@@ -24,7 +24,7 @@ ul {
   width: 100%;
   max-width: 950px;
   position: relative;
-  left: 20px;
+  transform: translateX(20px);
 }
 
 .skill-content ul {
@@ -56,7 +56,7 @@ ul {
 
 @media (max-width: 1050px) {
   .skill-content {
-    transform: translateX(-20px);
+    transform: translateX(0px);
   }
   .inner {
     width: 91%;

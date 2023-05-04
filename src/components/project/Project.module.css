@@ -1,16 +1,27 @@
 .project-section {
-  width: 900px;
-  height: 2000px;
-  max-height: auto;
+  max-width: 100vh;
+  height: auto;
   position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+ul {
   display: block;
-  display: inline-block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
 }
 
 .project-content {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
+  width: 100%;
+  max-width: 1000px;
 }
 
 .project-list img {
@@ -20,72 +31,36 @@
 }
 
 .project-pin {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 5%;
+  position: relative;
+  width: 100%;
 }
 
 .main-ul {
-  display: flex;
-  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1000px;
+  position: relative;
+  display: block;
   margin: 0;
   padding: 0;
 }
 
-.project-pin ul {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0;
-  padding: 0;
-}
-
-.project-pin li {
-  flex-basis: calc(33.33% - 20px);
-  margin: 10px;
-  padding: 10px;
-  border-radius: 5px;
-  text-align: center;
-}
-
-@media screen and (max-width: 768px) {
-  .project-pin li {
-    flex-basis: calc(50% - 20px);
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .project-pin li {
-    flex-basis: calc(100% - 20px);
-  }
+.main-li {
+  list-style: none;
+  display: list-item;
+  margin: 20px 20px 0px 20px;
 }
 
 .pin-container {
   position: relative;
   display: flex;
-  flex-wrap: wrap;
-  display: inline-flex;
-  width: auto;
-  height: auto;
+  width: 100%;
+  max-width: 1000px;
   align-items: center;
-}
-
-@media screen and (max-width: 768px) {
-  .pin-container {
-    display: block;
-    flex-basis: calc(50% - 20px);
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .pin-container {
-    flex-basis: calc(50% - 20px);
-  }
+  justify-content: center;
 }
 
 .pin-image {
   position: relative;
-  width: auto;
-  height: auto;
   border-radius: 25px;
   z-index: 0;
   transition: all 0.3s ease-out;
@@ -104,11 +79,12 @@ video {
   border: none;
   transition: all 0.3s ease-out;
   filter: drop-shadow(-10px 10px 15px #000000ab);
+  width: 100%;
+  max-width: 250px;
 }
 
 .image-container {
-  width: 400px;
-  height: 400px;
+  width: 100%;
 }
 
 .overlay {
@@ -122,15 +98,6 @@ video {
   transition: opacity 500ms ease-in-out;
 }
 
-@media screen and (max-width: 768px) {
-  .pin-image:hover {
-    z-index: 999;
-  }
-  .pin-image:hover video {
-    transform: scaleY(1) rotate(0);
-  }
-}
-
 .pin-image:hover .overlay {
   opacity: 0;
   /* transform: scaleY(1.2) rotate(10deg); */
@@ -142,6 +109,7 @@ video {
   line-height: 1;
   border: none;
   width: 100%;
+  max-width: 400px;
   transition: all 500ms ease-out;
   border-radius: 20px;
   box-shadow: #0000004d 0px 19px 38px, #00000038 0px 15px 12px;
@@ -158,18 +126,13 @@ video {
 }
 
 .pin-description {
-  padding: 10px;
+  position: relative;
   background-color: #363636;
   border-radius: 10px;
-  z-index: 999;
-  top: 100%;
-  text-align: left;
   padding: 20px;
-  width: 400px;
   max-width: 400px;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-  mix-blend-mode: normal;
 }
 
 .pin-description p {
@@ -178,181 +141,29 @@ video {
   width: 100%;
 }
 
-@media screen and (max-width: 768px) {
-  .pin-description p {
-    text-align: left;
-    width: 90%;
-  }
-  .main-ul {
-    flex-direction: column;
-  }
-
-  .main-ul .main-li {
-    flex-basis: calc(50% - 20px);
-    margin-bottom: 100px;
-  }
-
-  .description-container {
-    position: absolute;
-    background-color: #363636;
-    text-align: center;
-
-    gap: 0px;
-    width: 100%;
-  }
-
-  .pin-description {
-    background-color: transparent;
-    box-shadow: none;
-    z-index: 999;
-    width: 100%;
-  }
-
-  .itemone {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 10px;
-    width: 62%;
-    right: 57px;
-    bottom: 10px;
-    border-radius: 0px 0px 40px 40px;
-    background-color: #000000cc;
-  }
-
-  .listone .ul {
-    position: absolute;
-    top: 10px;
-    mix-blend-mode: normal;
-    left: 15px;
-  }
-
-  .itemtwo {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    height: 50%;
-    width: 100%;
-    border-radius: 0px 0px 20px 20px;
-    bottom: 6px;
-    background-color: #000000cc;
-    text-align: center;
-  }
-
-  .listtwo .ul {
-    position: absolute;
-  }
-
-  .image-container {
-    width: 350px;
-    height: auto;
-  }
-
-  .overlay {
-    height: 98%;
-  }
-
-  .itemtwo .pin-description p {
-    text-align: left;
-    width: 110%;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .main-ul .main-li {
-    flex-basis: calc(100% - 20px);
-  }
-
-  .project-pin {
-    margin-bottom: 100px;
-  }
-
-  .project-pin li {
-    margin-bottom: 100px;
-  }
-  .description-container {
-    position: absolute;
-    text-align: center;
-  }
-
-  .pin-description {
-    border-radius: 0px;
-    width: 90%;
-    height: 100%;
-    margin: 0;
-    padding: 0 0 0 10px;
-  }
-
-  .pin-description p {
-    font-size: 12px;
-    text-align: left;
-    height: 100%;
-    mix-blend-mode: normal;
-  }
-
-  .project-tech-list {
-    position: relative;
-    width: 100%;
-    z-index: 5;
-    text-align: center;
-  }
-}
-
 .pin-container > div:nth-child(1) {
   transform: translateX(25px);
 }
 
-.project-pin ul {
-  display: block;
-  list-style: none;
-}
-
-.project-pin ul li:nth-of-type(2) .pin-container .pin-image,
+.main-ul .main-li:nth-of-type(2) .pin-container .pin-image,
 .pin-container > div:nth-child(2) {
   transform: translateX(-25px);
 }
-.project-pin
-  ul
-  li:nth-of-type(2)
+
+.main-ul
+  .main-li:nth-of-type(2)
   .pin-container
   > div:nth-child(1)
   .pin-description
   p,
-.project-pin ul li:nth-of-type(2) .pin-container > div:nth-child(1) {
+.main-ul .main-li:nth-of-type(2) .pin-container > div:nth-child(1) {
   text-align: left;
   z-index: 2;
 }
 
-.project-pin ul li:nth-of-type(2) .pin-container {
-  transform: translateY(-70px);
-}
-
-.project-pin ul li:nth-of-type(2) .pin-container {
+.main-ul .main-li:nth-of-type(2) .pin-container {
   position: relative;
   display: flex;
-}
-
-@media screen and (max-width: 768px) {
-  .project-pin ul li:nth-of-type(2) .pin-container .pin-image,
-  .pin-container > div:nth-child(2) {
-    transform: translateX(25px);
-  }
-
-  .project-pin ul li:nth-of-type(2) .pin-container {
-    flex-direction: column-reverse;
-  }
-
-  .project-pin ul li:nth-of-type(2) .pin-container > div:nth-child(1) {
-    padding-top: 10px;
-    text-align: center;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .project-pin ul li:nth-of-type(2) .pin-container {
-    flex-direction: column-reverse;
-  }
 }
 
 .project-tech-list {
@@ -378,23 +189,21 @@ video {
   margin: 0px 5px 0px 0px;
 }
 
-@media screen and (max-width: 768px) {
-  .listone .ul {
-    position: absolute;
-  }
-}
 .project-list {
+  width: 100%;
+  max-width: 1000px;
   position: relative;
-  display: flex;
-  left: 56%;
-  transform: translateX(-50%);
+  height: 100%;
+  display: block;
 }
 
 .project-list ul {
   display: grid;
-  grid-template-columns: repeat(3, 22rem);
+  grid-template-columns: repeat(auto-fill, minmax(285px, 0.6fr));
   justify-content: center;
-  row-gap: 150px;
+  column-gap: 50px;
+  row-gap: 50px;
+  margin: 20px;
 }
 
 .project-list ul li {
@@ -402,27 +211,12 @@ video {
   margin: 0;
 }
 
-@media screen and (max-width: 768px) {
-  .project-section {
-    height: 100%;
-  }
-  .project-list ul {
-    grid-template-columns: repeat(2, 22rem);
-    justify-content: space-between;
-    column-gap: 30px;
-    row-gap: 50px;
-  }
+.listtwo {
+  float: left;
 }
 
-@media screen and (max-width: 480px) {
-  .project-list ul {
-    grid-template-columns: 1fr;
-    justify-items: center;
-    column-gap: 0px;
-    row-gap: 50px;
-  }
-  .project-list .project-ul .project-li {
-    bottom: 200px;
-    margin-bottom: 100px;
+@media (max-width: 600px) {
+  .main-li {
+    display: block;
   }
 }
