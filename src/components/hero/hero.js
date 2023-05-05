@@ -1,4 +1,4 @@
-import React, { useState, useEffect, ReactSVG, useContext } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { ReactComponent as ChevronArrow } from '../../assets/chevron-down.svg'
 import classes from './hero.module.css'
 import { Navbar } from '../nav/Navbar'

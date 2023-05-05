@@ -1,27 +1,18 @@
-import React, { useState, useEffect, useContext, useRef } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import sharedstyle from '../styles/Sharedstyles.module.css'
 import classes from './Layout.module.css'
 
-import PortfolioContext from '../../context/portfolio-context'
 
 const ProjectLayout = (props) => {
 
-    const [active, setActive] = useState(false);
     const [onOpen, setOnOpen] = useState(false);
 
-    const portfolioCtx = useContext(PortfolioContext)
 
     const handSetOnClick = () => {
         setOnOpen(!onOpen);
     }
 
-    const handSetActive = () => {
-        setActive(true);
-    }
 
-    const handSetNotActive = () => {
-        setActive(false);
-    }
 
 
     const targetRef = useRef(null);

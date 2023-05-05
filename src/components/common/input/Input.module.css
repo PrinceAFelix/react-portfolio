@@ -37,6 +37,7 @@
   box-sizing: border-box;
   margin-bottom: 5px;
   border: none;
+  
 }
 .textarea:focus,
 .Input:focus {

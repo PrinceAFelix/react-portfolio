@@ -6,9 +6,8 @@ import Input from '../common/input/Input'
 import PortfolioContext from '../../context/portfolio-context'
 
 import emailjs from '@emailjs/browser';
-import dotenv from 'dotenv';
+import { Alert } from '../common/alert/Alert'
 
-dotenv.config();
 export const Contact = () => {
 
   const portfolioCtx = useContext(PortfolioContext)
@@ -23,7 +22,12 @@ export const Contact = () => {
     name: '',
     email: '',
     subject: '',
-    message: ''
+    message: '',
+    isSent: false
+  })
+
+  const [isError, setError] = useState({
+    isErr: false,
   })
 
 
@@ -47,12 +51,30 @@ export const Contact = () => {
 
   }, [contactForm])
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setContactForm((prev) => ({
+        ...prev,
+        isSent: false
+      }))
+    }, 3000)
+    return () => clearTimeout(timer)
+  }, [contactForm.isSent])
+
 
   const handleSubmitForm = (e) => {
+    const validateEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
     e.preventDefault();
     const fields = [nameref, emailref, subjectref, messageref]
     let index = -1
     //Validate
+
+    setContactForm((prev) => ({
+      ...prev,
+      isSent: true
+    }))
+
 
     for (let i = 0; i < fields.length; i++) {
       if (fields[i].current.value === '') {
@@ -63,34 +85,56 @@ export const Contact = () => {
     }
     if (index >= 0) {
       fields[index].current.focus()
-      return
+      setError((prev) => ({
+        ...prev,
+        isErr: true
+      }))
+      return false;
     }
 
     if (emailref.current.value !== '') {
-      if (!emailref.current.value.includes('@')) {
+
+      if (!validateEmail.test(emailref.current.value)) {
         emailref.current.style.color = 'red'
         emailref.current.style.border = "1px solid red";
-        return
+
+        setError((prev) => ({
+          ...prev,
+          isErr: true
+        }))
+
+        return false;
       }
+
 
     }
 
-    //Handle Email Sender api
-    emailjs.sendForm(process.env.SERVICE_ID, process.env.TEMPLATE_ID, formref.current, process.env.PUBLIC_KEY)
-      .then((result) => {
-        console.log(result.text);
-      }, (error) => {
-        console.log(error.text);
-      });
 
-    setContactForm({
+    emailjs.send(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, {
+      name: portfolioCtx.form.name,
+      message: portfolioCtx.form.message,
+      email: portfolioCtx.form.email,
+      subject: portfolioCtx.form.subject,
+    }, process.env.REACT_APP_PUBLIC_KEY).then((result) => {
+      console.log(result.text);
+    }, (error) => {
+      console.log(error.text);
+    });
+
+    setContactForm((prev) => ({
+      ...prev,
       name: '',
       email: '',
       subject: '',
       message: ''
-    })
+    }))
 
+    setError((prev) => ({
+      ...prev,
+      isErr: false
+    }))
 
+    return true;
 
 
   }
@@ -122,6 +166,8 @@ export const Contact = () => {
           </button>
         </form>
       </div>
+      <Alert err={isError.isErr} className={contactForm.isSent ? 'toggle' : ''} />
+
     </section>
 
   )
