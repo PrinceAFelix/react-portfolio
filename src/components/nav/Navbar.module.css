@@ -104,8 +104,7 @@
   }
 }
 
-ul {
-  -webkit-font-smoothing: antialiased;
+.ul {
   line-height: 1.5;
   box-sizing: inherit;
   display: flex;
@@ -116,21 +115,20 @@ ul {
   list-style: none;
 }
 
-li {
+.li {
   display: list-item;
-  text-align: -webkit-match-parent;
   margin: 20px 20px;
   position: relative;
   counter-increment: item 1;
   font-size: 15px;
 }
 
-ul li a {
+.ul .li a {
   text-decoration: none;
   color: #ccf2fc;
 }
 
-ul li a:hover {
+.ul .li a:hover {
   color: #00b7c7;
   transition: all 0.3s ease-in-out;
 }

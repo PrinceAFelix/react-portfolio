@@ -109,7 +109,7 @@ export const Projects = () => {
                 </ul>
             </div>
 
-            <div className={sharedstyle['end-section']} />
+            {/* <div className={sharedstyle['end-section']} /> */}
         </section>
     )
 }

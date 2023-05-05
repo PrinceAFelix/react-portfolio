@@ -28,17 +28,17 @@ export const Navbar = () => {
             </a>
           </div>
           <div className={`${classes["nav-links"]} ${isOn ? classes['toggle-on'] : ''}`}>
-            <ul>
-              <li>
+            <ul className={classes.ul}>
+              <li className={classes.li}>
                 <a onClick={handleSetIsOn} href="/#about">About</a>
               </li>
-              <li>
+              <li className={classes.li}>
                 <a onClick={handleSetIsOn} href="/#skills">Skills</a>
               </li>
-              <li>
+              <li className={classes.li}>
                 <a onClick={handleSetIsOn} href="/#projects">Projects</a>
               </li>
-              <li>
+              <li className={classes.li}>
                 <a onClick={handleSetIsOn} href="/#contact">Contact</a>
               </li>
             </ul>

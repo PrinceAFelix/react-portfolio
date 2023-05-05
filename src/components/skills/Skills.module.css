@@ -34,12 +34,20 @@ ul {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   list-style-type: disc;
+  padding: 0;
+  gap: 10px;
 }
 
 .skill-content ul li {
   list-style: none;
   display: list-item;
-  margin: 20px 20px 0px 20px;
+  margin: 0px 0px 10px 0px;
+}
+
+@media (max-width: 965px) {
+  .skill-content ul li:last-child {
+    grid-column: 1 / -1;
+  }
 }
 
 .inner {
@@ -59,10 +67,8 @@ ul {
     transform: translateX(0px);
   }
   .inner {
-    width: 91%;
-    left: 20px;
+    width: 100%;
     transform: translateX(0px);
-    right: 20px;
   }
 }
 
@@ -81,7 +87,7 @@ ul {
 @media (max-width: 378px) {
   .inner {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    width: 91%;
+    width: 100%;
   }
 }
 
@@ -105,8 +111,7 @@ ul {
 
 .tech-list {
   width: 100%;
-  display: inline-block;
-  justify-content: flex-end;
+
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
@@ -116,6 +121,7 @@ ul {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   padding: 0px;
   margin: 0px;
+  align-items: center;
 }
 
 .tech-list ul li {
@@ -168,4 +174,11 @@ ul {
 .bar-child {
   height: 5px;
   border-radius: 5px;
+}
+
+.end {
+  position: absolute;
+  bottom: 0;
+  transform: translateY(50px);
+  margin-right: 20px;
 }

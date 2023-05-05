@@ -9,6 +9,18 @@
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
+@media (max-width: 965px) {
+  .skill-container {
+    height: 260px;
+  }
+}
+
+@media (max-width: 655px) {
+  .skill-container {
+    height: 100%;
+  }
+}
+
 .title {
   position: relative;
   font-family: "Inter", sans-serif;
@@ -70,7 +82,6 @@
 
 .project-container {
   width: 100%;
-  height: 100%;
   border-radius: 20px;
 }
 
@@ -79,7 +90,7 @@
   background: rgba(0, 0, 0, 0.5);
   clip-path: polygon(50% 0, 100% 100%, 0 100%);
   width: 100%;
-  height: 70px;
+  height: 80px;
   transform: translateY(-222px);
 }
 

@@ -94,7 +94,7 @@ export const Skills = () => {
                     <Chart title="ReactJS" cover="75%" color="#2efce9" />
                 </div>
             </div>
-            {/* <div className={`${sharedstyle['end-section']} ${classes.end}`} ></div> */}
+            <div className={`${sharedstyle['end-section']} ${classes.end}`} ></div>
         </section >
     )
 }
