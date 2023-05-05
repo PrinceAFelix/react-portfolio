@@ -5,12 +5,15 @@ import sharedstyle from '../styles/Sharedstyles.module.css'
 import Input from '../common/input/Input'
 import PortfolioContext from '../../context/portfolio-context'
 
+import emailjs from '@emailjs/browser';
+import dotenv from 'dotenv';
 
+dotenv.config();
 export const Contact = () => {
-
 
   const portfolioCtx = useContext(PortfolioContext)
 
+  const formref = useRef();
   const nameref = useRef();
   const emailref = useRef();
   const subjectref = useRef();
@@ -24,7 +27,9 @@ export const Contact = () => {
   })
 
 
-  const onInputChange = (e) => {
+  const onInputChange = (e, inputref) => {
+    inputref.current.style.color = "white";
+    inputref.current.style.border = "none";
     const { name, value } = e.target
     setContactForm((prev) => ({
       ...prev,
@@ -45,6 +50,38 @@ export const Contact = () => {
 
   const handleSubmitForm = (e) => {
     e.preventDefault();
+    const fields = [nameref, emailref, subjectref, messageref]
+    let index = -1
+    //Validate
+
+    for (let i = 0; i < fields.length; i++) {
+      if (fields[i].current.value === '') {
+        index = i
+        fields[i].current.style.border = "1px solid red";
+        break
+      }
+    }
+    if (index >= 0) {
+      fields[index].current.focus()
+      return
+    }
+
+    if (emailref.current.value !== '') {
+      if (!emailref.current.value.includes('@')) {
+        emailref.current.style.color = 'red'
+        emailref.current.style.border = "1px solid red";
+        return
+      }
+
+    }
+
+    //Handle Email Sender api
+    emailjs.sendForm(process.env.SERVICE_ID, process.env.TEMPLATE_ID, formref.current, process.env.PUBLIC_KEY)
+      .then((result) => {
+        console.log(result.text);
+      }, (error) => {
+        console.log(error.text);
+      });
 
     setContactForm({
       name: '',
@@ -52,10 +89,11 @@ export const Contact = () => {
       subject: '',
       message: ''
     })
-    //Handle Email Sender api
+
+
+
 
   }
-
 
 
 
@@ -63,7 +101,7 @@ export const Contact = () => {
   return (
     <section className={classes['contact-section']} id="contact">
       <div className={`${classes['section-head']} ${sharedstyle["container"]}`}>
-        <h1 className={classes['section-title']}>Contact me</h1>
+        <h1 className={classes['section-title']}>Contact me!</h1>
         <span className={sharedstyle["divider"]}></span>
       </div>
       <span className={classes['text-zone']}>
@@ -71,13 +109,13 @@ export const Contact = () => {
       </span>
 
       <div className={classes['form-container']}>
-        <form onSubmit={handleSubmitForm}>
+        <form ref={formref} onSubmit={handleSubmitForm}>
           <div className={classes.join}>
-            <Input onChange={onInputChange} value={contactForm.name} inputRef={nameref} label="Name" type="text" name="name" />
-            <Input onChange={onInputChange} value={contactForm.email} inputRef={emailref} label="Email" type="text" name="email" />
+            <Input onChange={(e) => onInputChange(e, nameref)} value={contactForm.name} inputRef={nameref} label="Name" type="text" name="name" />
+            <Input onChange={(e) => onInputChange(e, emailref)} value={contactForm.email} inputRef={emailref} label="Email" type="text" name="email" />
           </div>
-          <Input onChange={onInputChange} value={contactForm.subject} inputRef={subjectref} label="Subject" type="text" name="subject" />
-          <Input onChange={onInputChange} value={contactForm.message} inputRef={messageref} label="Message" type="textarea" name="message" />
+          <Input onChange={(e) => onInputChange(e, subjectref)} value={contactForm.subject} inputRef={subjectref} label="Subject" type="text" name="subject" />
+          <Input onChange={(e) => onInputChange(e, messageref)} value={contactForm.message} inputRef={messageref} label="Message" type="textarea" name="message" />
 
           <button className={classes.button} type="submit">
             Send! ツ

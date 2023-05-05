@@ -10,6 +10,7 @@
 }
 
 .content {
+  width: auto;
   position: absolute;
   top: 35%;
   left: 35%;
@@ -17,6 +18,8 @@
   text-align: left;
   z-index: 5;
   flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
 .h1 {
@@ -73,17 +76,17 @@
 }
 
 .big-initial {
-  width: 90px;
+  width: clamp(4.375rem, 2.8125rem + 5vw, 5.625rem);
   height: auto;
   transform: translate(10px, -8px);
 }
 
-@media (max-width: 430px) {
+/* @media (max-width: 430px) {
   .big-initial {
     width: var(--font-m);
     transform: translate(10px, -15px);
   }
-}
+} */
 
 @keyframes rubberBand {
   0% {
@@ -136,13 +139,15 @@
     #0d0d0d
   );
 
-  width: 100%;
+  width: 110%;
   height: 50px;
   position: absolute;
   bottom: 0;
   visibility: visible;
   opacity: 1;
   transition: opacity 500ms linear;
+  box-sizing: border-box;
+  margin: 0px -20px 0px -20px;
 }
 
 .popup-btn.hidden {

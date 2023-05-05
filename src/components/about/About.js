@@ -23,7 +23,7 @@ export const About = () => {
           <p className={sharedstyle.p}><a href="#contact">Say hello.</a></p>
         </div>
       </div>
-      <div className={sharedstyle['end-section']} />
+      <div className={`${sharedstyle['end-section']}`} />
 
     </section>
   )

@@ -221,7 +221,7 @@
 }
 
 .laptop:hover {
-  transform: scale(2) translate(5px, -35px);
+  transform: scale(2) translate(0px, -35px);
   z-index: 5;
 }
 

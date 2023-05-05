@@ -26,10 +26,6 @@ const Input = React.forwardRef((props, ref) => {
         };
     });
 
-    const styles = {
-        width: props.name === 'name' ? 265 : props.name === 'email' ? 265 : 580,
-        height: props.name === 'message' ? 150 : 30
-    }
 
 
 
@@ -39,6 +35,7 @@ const Input = React.forwardRef((props, ref) => {
             {
                 props.type === 'textarea' ?
                     <textarea
+                        autoComplete="off"
                         onFocus={handleFocus}
                         onBlur={handleFocus}
                         name={props.name}
@@ -49,7 +46,7 @@ const Input = React.forwardRef((props, ref) => {
                     />
                     :
                     <input
-                        style={styles}
+                        autoComplete="off"
                         ref={inputRef}
                         className={`${classes.Input} ${props.className}`}
                         type={props.type}
