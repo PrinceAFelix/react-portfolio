@@ -27,11 +27,11 @@
   max-width: 770px;
   white-space: pre-wrap;
   font-size: var(--font-l);
-  font-family: "Open Sans", sans-serif;
+  font-family: var(--font-fam-four);
 }
 
 .first {
-  font-family: "Jura", sans-serif;
+  font-family: var(--font-fam-five);
   font-size: clamp(1.25rem, 0.8594rem + 1.25vw, 1.5625rem);
   margin-left: 5px;
   text-align: left;

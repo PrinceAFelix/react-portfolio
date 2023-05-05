@@ -17,7 +17,7 @@
 
 .section-title {
   font: 15px;
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-fam-one);
 }
 
 .text-zone {

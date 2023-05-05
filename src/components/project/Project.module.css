@@ -9,16 +9,6 @@
   gap: 50px;
 }
 
-ul {
-  display: block;
-  list-style-type: disc;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  padding-inline-start: 40px;
-}
-
 .project-content {
   width: 100%;
   max-width: 1000px;
@@ -78,7 +68,7 @@ video {
   line-height: 1;
   border: none;
   transition: all 0.3s ease-out;
-  filter: drop-shadow(-10px 10px 15px #000000ab);
+  filter: var(--ds-one);
   width: 100%;
   max-width: 250px;
 }
@@ -91,7 +81,7 @@ video {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgb(0, 53, 57);
+  background-color: #003539;
   mix-blend-mode: color;
   border-radius: 20px;
   opacity: 1;
@@ -100,7 +90,6 @@ video {
 
 .pin-image:hover .overlay {
   opacity: 0;
-  /* transform: scaleY(1.2) rotate(10deg); */
   transition: opacity 500ms ease-in-out, transform 500ms ease-in-out;
 }
 
@@ -112,7 +101,7 @@ video {
   max-width: 400px;
   transition: all 500ms ease-out;
   border-radius: 20px;
-  box-shadow: #0000004d 0px 19px 38px, #00000038 0px 15px 12px;
+  box-shadow: var(--bs-four);
 }
 
 .description-container {
@@ -127,12 +116,11 @@ video {
 
 .pin-description {
   position: relative;
-  background-color: #363636;
+  background-color: var(--lighter-bg);
   border-radius: 10px;
   padding: 20px;
   max-width: 400px;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  box-shadow: var(--bs-three);
 }
 
 .pin-description p {
@@ -183,7 +171,7 @@ video {
 .project-tech-list .ul li {
   display: inline-block;
   font-size: 13px;
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-fam-one);
   opacity: 0.4;
   font-style: italic;
   margin: 0px 5px 0px 0px;

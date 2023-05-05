@@ -97,22 +97,21 @@ ul {
 }
 
 .expereince-content {
-  background-color: #363636;
+  background-color: var(--lighter-bg);
   padding: 20px;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  box-shadow: var(--bs-one);
 }
 
 .tech-list-container {
   position: relative;
   width: 100%;
-  background-color: #363636;
+  background-color: var(--lighter-bg);
   margin-top: 10px;
 }
 
 .tech-list {
   width: 100%;
-
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  box-shadow: var(--bs-one);
 }
 
 .tech-list ul {
@@ -126,7 +125,7 @@ ul {
 
 .tech-list ul li {
   font-size: clamp(0.875rem, 0.5625rem + 1vw, 1.125rem);
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-fam-one);
   font-style: italic;
   padding: 0px;
   margin: 0px;
@@ -159,7 +158,7 @@ ul {
 
 .bar-container span {
   font-size: 18px;
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-fam-one);
 }
 
 .bar-parent {
@@ -167,8 +166,7 @@ ul {
   height: 5px;
   border-radius: 5px;
   background-color: #363636;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  box-shadow: var(--bs-three);
 }
 
 .bar-child {
