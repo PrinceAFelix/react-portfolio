@@ -49,7 +49,7 @@ export const Contact = () => {
 
     return () => clearTimeout(timer)
 
-  }, [contactForm])
+  }, [contactForm, portfolioCtx])
 
   useEffect(() => {
     const timer = setTimeout(() => {
