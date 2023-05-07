@@ -46,9 +46,7 @@ export const Hero = () => {
   }
 
   useEffect(() => {
-    console.log(portfolioCtx.scrollY)
     window.addEventListener('scroll', handleScrollY);
-    console.log(portfolioCtx.scrollY)
     return () => {
       window.removeEventListener('scroll', handleScrollY);
     };
@@ -126,6 +124,7 @@ export const Hero = () => {
             if (i === index) {
               return false;
             }
+
           }),
         };
       }
@@ -161,37 +160,35 @@ export const Hero = () => {
           <Navbar />
         </div>
         <div className={classes["content"]}>
-          <div>
-            {
-              <h1 className={classes.h1}>
-                <span className={classes.first}>
-                  {
-                    first.split('').map((c, i) => {
-                      return <span onMouseEnter={() => handleMouseEnter(1, i)} onMouseLeave={() => handleMouseLeave(1, i)} className={`${classes.stretch} ${isMouseEnter.first[i] ? classes.stretching : ''}`} key={i}>{c}</span>
+          {
+            <h1 className={classes.h1}>
+              <span className={classes.first}>
+                {
+                  first.split('').map((c, i) => {
+                    return <span onMouseEnter={() => handleMouseEnter(1, i)} onMouseLeave={() => handleMouseLeave(1, i)} className={`${classes.stretch} ${isMouseEnter.first[i] ? classes.stretching : ''}`} key={i}>{c}</span>
 
-                    })
-                  }
-                </span>
-                <br />
-                <span className={classes.second}>
-                  {
-                    second.split('').map((c, i) => {
-                      return i === 0 ? <span onMouseEnter={() => handleMouseEnter(2, i)} onMouseLeave={() => handleMouseLeave(2, i)} className={`${classes.stretch} ${isMouseEnter.second[i] ? classes.stretching : ''}`} key={i}>{<img className={classes['big-initial']} src={logo} alt="" />}</span>
-                        : <span onMouseEnter={() => handleMouseEnter(2, i)} onMouseLeave={() => handleMouseLeave(2, i)} className={`${classes.stretch} ${isMouseEnter.second[i] ? classes.stretching : ''}`} key={i}>{c}</span>
-                    })
-                  }
-                </span>
-                <br />
-                <span className={classes.third}>
-                  {
-                    third.split('').map((c, i) => {
-                      return <span onMouseEnter={() => handleMouseEnter(3, i)} onMouseLeave={() => handleMouseLeave(3, i)} className={` ${classes.stretch} ${isMouseEnter.third[i] ? classes.stretching : ''}`} key={i}>{c}</span>
-                    })
-                  }
-                </span>
-              </h1>
-            }
-          </div>
+                  })
+                }
+              </span>
+              <br />
+              <span className={classes.second}>
+                {
+                  second.split('').map((c, i) => {
+                    return i === 0 ? <span onMouseEnter={() => handleMouseEnter(2, i)} onMouseLeave={() => handleMouseLeave(2, i)} className={`${classes.stretch} ${isMouseEnter.second[i] ? classes.stretching : ''}`} key={i}>{<img className={classes['big-initial']} src={logo} alt="" />}</span>
+                      : <span onMouseEnter={() => handleMouseEnter(2, i)} onMouseLeave={() => handleMouseLeave(2, i)} className={`${classes.stretch} ${isMouseEnter.second[i] ? classes.stretching : ''}`} key={i}>{c}</span>
+                  })
+                }
+              </span>
+              <br />
+              <span className={classes.third}>
+                {
+                  third.split('').map((c, i) => {
+                    return <span onMouseEnter={() => handleMouseEnter(3, i)} onMouseLeave={() => handleMouseLeave(3, i)} className={` ${classes.stretch} ${isMouseEnter.third[i] ? classes.stretching : ''}`} key={i}>{c}</span>
+                  })
+                }
+              </span>
+            </h1>
+          }
         </div>
 
 

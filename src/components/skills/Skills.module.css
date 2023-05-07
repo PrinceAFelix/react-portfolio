@@ -1,16 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap");
 
-ul {
-  display: block;
-  list-style-type: disc;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  padding-inline-start: 40px;
-}
 .skill-section {
-  max-width: 100vh;
+  max-width: 900px;
   height: auto;
   position: relative;
   left: 50%;
@@ -32,10 +23,16 @@ ul {
   max-width: 950px;
   position: relative;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
   list-style-type: disc;
   padding: 0;
   gap: 10px;
+}
+
+@media (max-width: 340px) {
+  .skill-content ul {
+    grid-template-columns: none;
+  }
 }
 
 .skill-content ul li {
@@ -44,7 +41,7 @@ ul {
   margin: 0px 0px 10px 0px;
 }
 
-@media (max-width: 965px) {
+@media (max-width: 935px) {
   .skill-content ul li:last-child {
     grid-column: 1 / -1;
   }

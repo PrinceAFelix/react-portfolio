@@ -1,5 +1,5 @@
 .project-section {
-  max-width: 100vh;
+  max-width: 1000px;
   height: auto;
   position: relative;
   left: 50%;
@@ -187,7 +187,7 @@ video {
 
 .project-list .project-ul {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(285px, 0.6fr));
+  grid-template-columns: repeat(auto-fill, minmax(290px, 0.6fr));
   justify-content: center;
   column-gap: 50px;
   padding: 0;

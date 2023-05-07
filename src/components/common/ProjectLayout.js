@@ -52,33 +52,31 @@ const ProjectLayout = (props) => {
     return (
         <div ref={targetRef} className={classes['project-container']}>
 
-            {/* <a href={props.link} target='_blank'>
-                <div onMouseEnter={handSetActive} onMouseLeave={handSetNotActive} className={classes['image-wrapper']}>
-                    <img className={`${classes.img} ${active ? classes.active : ""}`} src={props.img} alt="" />
-                </div>
-            </a> */}
 
-            {
-            }
+
+
             <div onClick={handSetOnClick} className={classes.laptop}>
                 <div style={screenStyle} className={`${classes['laptop_screen']} ${onOpen ? classes['laptop-open'] : ''}`}></div>
                 <div className={`${classes['laptop-base']} ${onOpen ? classes['open'] : ''}`}></div>
             </div>
 
-            <div className={classes['project-details']}>
-                <h1 className={classes['project-title']}>{props.title}</h1>
-                <p className={`${sharedstyle.p} ${classes.p}`}>{props.description}</p>
-                <span className={classes.span}>
-                    <ul className={classes.ul}>
-                        {
-                            props.techList.map((tl) => {
-                                return <li key={tl}>{tl}</li>
+            <a className={classes.a} href={props.link} rel="noreferrer" target='_blank'>
+                <div className={classes['project-details']}>
+                    <h1 className={classes['project-title']}>{props.title}</h1>
+                    <p className={`${sharedstyle.p} ${classes.p}`}>{props.description}</p>
+                    <span className={classes.span}>
+                        <ul className={classes.ul}>
+                            {
+                                props.techList.map((tl) => {
+                                    return <li key={tl}>{tl}</li>
 
-                            })
-                        }
-                    </ul>
-                </span>
-            </div>
+                                })
+                            }
+                        </ul>
+                    </span>
+                </div>
+            </a>
+
             <div className={classes.surface} />
 
         </div>

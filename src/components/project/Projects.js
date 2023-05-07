@@ -10,13 +10,14 @@ import othello from '../../assets/othello.svg'
 import airsearch from '../../assets/airsearch.svg'
 import discordbot from '../../assets/discordbot.svg'
 import caoutprvw from '../../assets/caout.webm'
+import porfolio from '../../assets/portfolio.svg'
 
 import ProjectLayout from '../common/ProjectLayout'
 
 
 
 const projectDescription = [
-    "A cross platform chat application that works with internet connection or bluetooth nearby connection.",
+    "Developed a responsive portfolio website using complete React that demonstrates my skills, projects and experience.",
     "iPhone weather app clone programmed in HTML5/CSS/JAVASCRIPT with the use of openweathermap api to extract the weather data.",
     "Programmed in Java. Stacker was inspired by the arcade game Stacker. The goal of the game is to stack the cubes to the top without missing any blocks.",
     "Created a School Community Web App using ASP.NET MVC Core Application. This application implements CRUD operation. ",
@@ -88,13 +89,13 @@ export const Projects = () => {
 
                 <ul className={classes["project-ul"]}>
                     <li className={classes["project-li"]}>
-                        <ProjectLayout delay={100} img={chatApp} link={"https://github.com/PrinceAFelix/Flutter-Chat-Application"} title={"Chat Application"} description={projectDescription[0]} techList={["Flutter", "Firebase", "Dart"]} />
+                        <ProjectLayout delay={100} img={porfolio} link={"https://princefelix.com/"} title={"Portfolio"} description={projectDescription[0]} techList={["Flutter", "Responsive Design", "Netlify"]} />
                     </li>
                     <li className={classes["project-li"]}>
                         <ProjectLayout delay={250} img={weatherAPI} link={"https://princeafelix.github.io/Weather-API/"} title={"Weather API"} description={projectDescription[1]} techList={["HTML", "CSS", " JavaScript", "OpenWeatherAPI"]} />
                     </li>
                     <li className={classes["project-li"]}>
-                        <ProjectLayout delay={350} img={airsearch} link={"https://github.com/PrinceAFelix/AirSearch"} title={"AirSearch"} description={projectDescription[5]} techList={["React"]} />
+                        <ProjectLayout delay={350} img={airsearch} link={"https://github.com/PrinceAFelix/AirSearch"} title={"AirSearch"} description={projectDescription[5]} techList={["React", "Responsive Design"]} />
 
                     </li>
                     <li className={classes["project-li"]}>
