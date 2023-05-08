@@ -217,11 +217,11 @@
 }
 
 .laptop:hover {
-  transform: scale(2) translate(0px, -35px);
+  transform: scale(1.8) translate(0px, -35px);
   z-index: 5;
 }
 
-@media (max-width: 430px) {
+@media (max-width: 400px) {
   .laptop:hover {
     transform: scale(1.5) translate(0px, -35px);
   }
