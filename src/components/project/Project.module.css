@@ -59,11 +59,11 @@
 .pin-image:hover {
   z-index: 999;
 }
-.pin-image:hover video {
+.pin-image:hover .mediaimg {
   transform: scaleY(1.2) rotate(-10deg);
 }
 
-video {
+.mediaimg {
   margin: 0;
   line-height: 1;
   border: none;

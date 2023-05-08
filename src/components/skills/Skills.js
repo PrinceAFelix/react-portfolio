@@ -52,7 +52,7 @@ export const Skills = () => {
     return (
         <section className={classes["skill-section"]} id="skills">
             <div className={sharedstyle["container"]}>
-                <h1 className={`${sharedstyle["section-title"]} ${classes["section-title"]}`}>Skills</h1>
+                <h1 className={`${sharedstyle["section-title"]} ${classes["section-title"]}`}>Skills & Experience</h1>
                 <span className={sharedstyle["divider"]}></span>
             </div>
             <div className={classes["skill-content"]}>
@@ -69,7 +69,7 @@ export const Skills = () => {
                     <div className={`${classes['expereince-content']}`}>
                         <h1 className={layout.title}>Mobile Application Development</h1>
                         <span className={layout.description}>
-                            <p className={sharedstyle.p}>Design and develop a cross platform chat application that works with internet connection and bluetooth nearby connection.</p>
+                            <p className={sharedstyle.p}>Design and develop a cross-platform chat application that works with an internet connection and Bluetooth nearby connection.</p>
                         </span>
                     </div>
                     <div className={classes['tech-list-container']}>

@@ -49,7 +49,7 @@
 
 .inner {
   position: relative;
-  width: 100%;
+  width: 105%;
   max-width: 1000px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));

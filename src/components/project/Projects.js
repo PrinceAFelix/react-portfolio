@@ -9,7 +9,7 @@ import schoolCom from '../../assets/schoolcom.svg';
 import othello from '../../assets/othello.svg'
 import airsearch from '../../assets/airsearch.svg'
 import discordbot from '../../assets/discordbot.svg'
-import caoutprvw from '../../assets/caout.webm'
+import caout from '../../assets/caout3.gif'
 import porfolio from '../../assets/portfolio.svg'
 
 import ProjectLayout from '../common/ProjectLayout'
@@ -37,9 +37,8 @@ export const Projects = () => {
                 <li className={classes['main-li']}>
                     <div className={classes['pin-container']}>
                         <div className={classes['pin-image']} >
-                            <video width="250px" height="auto" preload="false" playsinline="" class="elementor-video" autoplay="" loop muted="muted" controlslist="nodownload" >
-                                <source src={caoutprvw} type="video/mp4" />
-                            </video>
+                            <img className={classes.mediaimg} width="250px" height="auto" src={caout} alt="previewchatapp" />
+
 
                         </div>
                         <div className={`${classes['description-container']} ${classes.itemone} `}>
