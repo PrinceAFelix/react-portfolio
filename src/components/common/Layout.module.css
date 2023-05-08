@@ -221,6 +221,12 @@
   z-index: 5;
 }
 
+@media (max-width: 430px) {
+  .laptop:hover {
+    transform: scale(1.5) translate(0px, -35px);
+  }
+}
+
 .laptop_screen {
   display: flex;
   justify-content: center;
