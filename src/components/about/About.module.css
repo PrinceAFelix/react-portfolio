@@ -23,6 +23,15 @@
     flex-direction: column-reverse;
     gap: 0;
   }
+
+  .myInfo {
+    visibility: hidden;
+  }
+
+  .image {
+    visibility: visible;
+    width: 100%;
+  }
 }
 
 @media (min-width: 430px) {
@@ -104,20 +113,7 @@
 
   .aboutcontent {
     align-items: center;
-    gap: 40px;
     flex-direction: column-reverse;
-  }
-
-  .myInfo {
-    position: relative;
-    width: 100%;
-    transform: translate(0px);
-    padding: 50px;
-    height: 100%;
-  }
-
-  .image {
-    width: 100%;
   }
 }
 

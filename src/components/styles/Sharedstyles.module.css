@@ -14,7 +14,7 @@
   text-align: left;
   padding-top: 100px;
   font-family: var(--font-fam-two);
-  font-size: clamp(1.5625rem, 1.1719rem + 1.25vw, 1.875rem);
+  font-size: clamp(1.25rem, 0.4688rem + 2.5vw, 1.875rem);
   filter: var(--ds-three);
 }
 
@@ -23,7 +23,7 @@
   display: inline-block;
   content: "";
   height: 1px;
-  width: 450px;
+  width: 18vw;
   transform: translate(10px, 25px);
   background-color: #ffffff80;
 }
@@ -39,10 +39,6 @@
 }
 
 @media (max-width: 430px) {
-  .section-title::after {
-    width: 150px;
-  }
-
   .container {
     width: auto;
     height: auto;
