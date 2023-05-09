@@ -5,7 +5,7 @@ export const Footer = () => {
     return (
         <div className={classes.footer}>
             <div className={classes['footer-content']}>
-                <span>Designed and construct by Prince Adrianne Felix &#169; 2023 ツ</span>
+                <span>Designed and constructed by Prince Adrianne Felix &#169; 2023 ツ</span>
 
                 <div className={classes.links}>
                     <ul>
