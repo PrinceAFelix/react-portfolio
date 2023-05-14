@@ -198,6 +198,21 @@
   margin: 0;
 }
 
+@media (min-width: 1010px) {
+  .project-list .project-ul .project-li:nth-child(3n + 1):last-child {
+    grid-column-start: 2;
+    grid-column-end: 2;
+  }
+}
+
+@media (min-width: 670px) and (max-width: 1009px) {
+  .project-list .project-ul .project-li:nth-child(3n + 1):last-child {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    transform: translateX(25vw);
+  }
+}
+
 .listtwo {
   float: left;
 }

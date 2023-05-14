@@ -91,7 +91,7 @@
   clip-path: polygon(50% 0, 100% 100%, 0 100%);
   width: 100%;
   height: 77px;
-  transform: translateY(-222px);
+  transform: translateY(-231px);
 }
 
 .surface::after {
@@ -201,7 +201,7 @@
 .p {
   font-size: 14px;
   width: 100%;
-  height: 85px;
+  height: 95px;
 }
 
 .laptop {

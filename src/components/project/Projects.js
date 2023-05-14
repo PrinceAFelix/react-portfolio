@@ -11,6 +11,7 @@ import airsearch from '../../assets/airsearch.svg'
 import discordbot from '../../assets/discordbot.svg'
 import caout from '../../assets/caout3.gif'
 import porfolio from '../../assets/portfolio.svg'
+import bank from '../../assets/bankms.svg'
 
 import ProjectLayout from '../common/ProjectLayout'
 
@@ -19,6 +20,7 @@ import ProjectLayout from '../common/ProjectLayout'
 const projectDescription = [
     "Developed a responsive portfolio website using complete React that demonstrates my skills, projects and experience.",
     "iPhone weather app clone programmed in HTML5/CSS/JAVASCRIPT with the use of openweathermap api to extract the weather data.",
+    "Designed and developed a bank management system in Java to manage bank operations. Utilized Object-Oriented Programming design pattern to construct a more efficient program.",
     "Programmed in Java. Stacker was inspired by the arcade game Stacker. The goal of the game is to stack the cubes to the top without missing any blocks.",
     "Created a School Community Web App using ASP.NET MVC Core Application. This application implements CRUD operation. ",
     "A simple strategy board game programmed in Java. You may modify the game board color and perform live chat using Java Networking. (On going)",
@@ -95,17 +97,22 @@ export const Projects = () => {
                     </li>
                     <li className={classes["project-li"]}>
                         <ProjectLayout delay={350} img={airsearch} link={"https://github.com/PrinceAFelix/AirSearch"} title={"AirSearch"} description={projectDescription[5]} techList={["React", "Responsive Design"]} />
-
                     </li>
                     <li className={classes["project-li"]}>
                         <ProjectLayout delay={450} img={schoolCom} link={"https://github.com/PrinceAFelix/CST8359-NET-Enterprise-Application-Development/tree/main/Assignment2"} title={"School Community MS"} description={projectDescription[3]} techList={["C#", "Razor pages", "Azure"]} />
                     </li>
                     <li className={classes["project-li"]}>
-                        <ProjectLayout delay={550} img={othello} link={"https://github.com/PrinceAFelix/Othello"} title={"Othello"} description={projectDescription[4]} techList={["Java", "Java Swing"]} />
+                        <ProjectLayout delay={550} img={bank} link={"https://github.com/PrinceAFelix/Bank-Management-System"} title={"Bank Management System"} description={projectDescription[2]} techList={["Java", "Java Swing", "PostgreSQL"]} />
                     </li>
                     <li className={classes["project-li"]}>
-                        <ProjectLayout delay={650} img={stacker} link={"https://github.com/PrinceAFelix/Stacker-Game"} title={"Stacker"} description={projectDescription[2]} techList={["Java", "Java Swing"]} />
+                        <ProjectLayout delay={650} img={othello} link={"https://github.com/PrinceAFelix/Othello"} title={"Othello"} description={projectDescription[4]} techList={["Java", "Java Swing"]} />
                     </li>
+                    <li className={classes["project-li"]}>
+                        <ProjectLayout delay={750} img={stacker} link={"https://github.com/PrinceAFelix/Stacker-Game"} title={"Stacker"} description={projectDescription[3]} techList={["Java", "Java Swing"]} />
+                    </li>
+
+
+
                 </ul>
             </div>
 
