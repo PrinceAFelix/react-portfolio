@@ -99,10 +99,10 @@ export const Projects = () => {
                         <ProjectLayout delay={350} img={airsearch} link={"https://github.com/PrinceAFelix/AirSearch"} title={"AirSearch"} description={projectDescription[5]} techList={["React", "Responsive Design"]} />
                     </li>
                     <li className={classes["project-li"]}>
-                        <ProjectLayout delay={450} img={schoolCom} link={"https://github.com/PrinceAFelix/CST8359-NET-Enterprise-Application-Development/tree/main/Assignment2"} title={"School Community MS"} description={projectDescription[3]} techList={["C#", "Razor pages", "Azure"]} />
+                        <ProjectLayout delay={450} img={schoolCom} link={"https://github.com/PrinceAFelix/CST8359-NET-Enterprise-Application-Development/tree/main/Assignment2"} title={"School/Community MS"} description={projectDescription[3]} techList={["C#", "Razor pages", "Azure"]} />
                     </li>
                     <li className={classes["project-li"]}>
-                        <ProjectLayout delay={550} img={bank} link={"https://github.com/PrinceAFelix/Bank-Management-System"} title={"Bank Management System"} description={projectDescription[2]} techList={["Java", "Java Swing", "PostgreSQL"]} />
+                        <ProjectLayout delay={550} img={bank} link={"https://github.com/PrinceAFelix/Bank-Management-System"} title={"Bank MS"} description={projectDescription[2]} techList={["Java", "Java Swing", "PostgreSQL"]} />
                     </li>
                     <li className={classes["project-li"]}>
                         <ProjectLayout delay={650} img={othello} link={"https://github.com/PrinceAFelix/Othello"} title={"Othello"} description={projectDescription[4]} techList={["Java", "Java Swing"]} />
