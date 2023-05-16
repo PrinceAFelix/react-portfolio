@@ -20,11 +20,11 @@ import ProjectLayout from '../common/ProjectLayout'
 const projectDescription = [
     "Developed a responsive portfolio website using complete React that demonstrates my skills, projects and experience.",
     "iPhone weather app clone programmed in HTML5/CSS/JAVASCRIPT with the use of openweathermap api to extract the weather data.",
+    "Developing with React. A fast and easy to use web application that get you the cheapest flight you need. (On going)",
+    "Developed a School Community Web App with ASP.NET MVC Core Application. This application implements CRUD operation. ",
     "Designed and developed a bank management system in Java to manage bank operations. Utilized Object-Oriented Programming design pattern to construct a more efficient program.",
-    "Programmed in Java. Stacker was inspired by the arcade game Stacker. The goal of the game is to stack the cubes to the top without missing any blocks.",
-    "Created a School Community Web App using ASP.NET MVC Core Application. This application implements CRUD operation. ",
     "A simple strategy board game programmed in Java. You may modify the game board color and perform live chat using Java Networking. (On going)",
-    "Developing using React. A fast and easy to use we application that get you the cheapest flight you need. (On going)",
+    "Programmed in Java. Stacker was inspired by the arcade game Stacker. The goal of the game is to stack the cubes to the top without missing any blocks.",
 ]
 
 export const Projects = () => {
@@ -96,19 +96,19 @@ export const Projects = () => {
                         <ProjectLayout delay={250} img={weatherAPI} link={"https://princeafelix.github.io/Weather-API/"} title={"Weather API"} description={projectDescription[1]} techList={["HTML", "CSS", " JavaScript", "OpenWeatherAPI"]} />
                     </li>
                     <li className={classes["project-li"]}>
-                        <ProjectLayout delay={350} img={airsearch} link={"https://github.com/PrinceAFelix/AirSearch"} title={"AirSearch"} description={projectDescription[5]} techList={["React", "Responsive Design"]} />
+                        <ProjectLayout delay={350} img={airsearch} link={"https://github.com/PrinceAFelix/AirSearch"} title={"AirSearch"} description={projectDescription[2]} techList={["React", "Responsive Design"]} />
                     </li>
                     <li className={classes["project-li"]}>
                         <ProjectLayout delay={450} img={schoolCom} link={"https://github.com/PrinceAFelix/CST8359-NET-Enterprise-Application-Development/tree/main/Assignment2"} title={"School/Community MS"} description={projectDescription[3]} techList={["C#", "Razor pages", "Azure"]} />
                     </li>
                     <li className={classes["project-li"]}>
-                        <ProjectLayout delay={550} img={bank} link={"https://github.com/PrinceAFelix/Bank-Management-System"} title={"Bank MS"} description={projectDescription[2]} techList={["Java", "Java Swing", "PostgreSQL"]} />
+                        <ProjectLayout delay={550} img={bank} link={"https://github.com/PrinceAFelix/Bank-Management-System"} title={"Bank MS"} description={projectDescription[4]} techList={["Java", "Java Swing", "PostgreSQL"]} />
                     </li>
                     <li className={classes["project-li"]}>
-                        <ProjectLayout delay={650} img={othello} link={"https://github.com/PrinceAFelix/Othello"} title={"Othello"} description={projectDescription[4]} techList={["Java", "Java Swing"]} />
+                        <ProjectLayout delay={650} img={othello} link={"https://github.com/PrinceAFelix/Othello"} title={"Othello"} description={projectDescription[5]} techList={["Java", "Java Swing"]} />
                     </li>
                     <li className={classes["project-li"]}>
-                        <ProjectLayout delay={750} img={stacker} link={"https://github.com/PrinceAFelix/Stacker-Game"} title={"Stacker"} description={projectDescription[3]} techList={["Java", "Java Swing"]} />
+                        <ProjectLayout delay={750} img={stacker} link={"https://github.com/PrinceAFelix/Stacker-Game"} title={"Stacker"} description={projectDescription[6]} techList={["Java", "Java Swing"]} />
                     </li>
 
 
