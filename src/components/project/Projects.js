@@ -90,7 +90,7 @@ export const Projects = () => {
 
                 <ul className={classes["project-ul"]}>
                     <li className={classes["project-li"]}>
-                        <ProjectLayout delay={100} img={porfolio} link={"https://princefelix.com/"} title={"Portfolio"} description={projectDescription[0]} techList={["Flutter", "Responsive Design", "Netlify"]} />
+                        <ProjectLayout delay={100} img={porfolio} link={"https://princefelix.com/"} title={"Portfolio"} description={projectDescription[0]} techList={["React", "Responsive Design", "Netlify"]} />
                     </li>
                     <li className={classes["project-li"]}>
                         <ProjectLayout delay={250} img={weatherAPI} link={"https://princeafelix.github.io/Weather-API/"} title={"Weather API"} description={projectDescription[1]} techList={["HTML", "CSS", " JavaScript", "OpenWeatherAPI"]} />
