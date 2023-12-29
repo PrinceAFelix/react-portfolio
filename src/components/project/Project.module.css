@@ -112,6 +112,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  z-index: 8;
 }
 
 .pin-description {
@@ -129,8 +130,9 @@
   width: 100%;
 }
 
-.pin-container > div:nth-child(1) {
-  transform: translateX(25px);
+.pin-container > div:not(:nth-child(2)) p,
+.pin-container > div:not(:nth-child(2)) {
+  text-align: left;
 }
 
 .main-ul .main-li:nth-of-type(2) .pin-container .pin-image,
@@ -146,7 +148,7 @@
   p,
 .main-ul .main-li:nth-of-type(2) .pin-container > div:nth-child(1) {
   text-align: left;
-  z-index: 2;
+  transform: translateX(25px);
 }
 
 .main-ul .main-li:nth-of-type(2) .pin-container {

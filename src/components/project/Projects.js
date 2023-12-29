@@ -9,6 +9,7 @@ import schoolCom from '../../assets/schoolcom.svg';
 import othello from '../../assets/othello.svg'
 import airsearch from '../../assets/airsearch.svg'
 import discordbot from '../../assets/discordbot.svg'
+import timesurf from '../../assets/timesurf.svg'
 import caout from '../../assets/caout3.gif'
 import porfolio from '../../assets/portfolio.svg'
 import bank from '../../assets/bankms.svg'
@@ -37,13 +38,38 @@ export const Projects = () => {
 
             <ul className={classes['main-ul']}>
                 <li className={classes['main-li']}>
+                    <div className={`${classes['pin-container']} `}>
+                        <div className={`${classes['description-container']} ${classes.itemone} `}>
+                            <h1 className={sharedstyle['project-title']}>TimeSurf</h1>
+                            <div className={classes['pin-description']} >
+                                <p className={sharedstyle.p}>Shift scheduler application that provides an effective workforce management. View, select, and swap shifts with co-worker as well as request a time off for your favourite holidays.</p>
+                            </div>
+                            <span className={`${classes['project-tech-list']} ${classes.listone}`}>
+                                <ul className={classes.ul}>
+                                    <li>Java Spring Boot</li>
+                                    <li>MongoDB</li>
+                                    <li>Flutter</li>
+                                    <li>ReactJS</li>
+                                </ul>
+                            </span>
+                        </div>
+                        <div className={classes['pin-image']} >
+                            <div className={classes['image-container']}>
+                                <div className={classes.overlay} />
+                                <img className={classes.image} src={timesurf} alt="discord-bot-poster" />
+
+                            </div>
+                        </div>
+
+                    </div>
+                </li>
+
+                <li className={classes['main-li']}>
                     <div className={classes['pin-container']}>
                         <div className={classes['pin-image']} >
                             <img className={classes.mediaimg} width="250px" height="auto" src={caout} alt="previewchatapp" />
-
-
                         </div>
-                        <div className={`${classes['description-container']} ${classes.itemone} `}>
+                        <div className={`${classes['description-container']} ${classes.itemtwo} `}>
                             <h1 className={sharedstyle['project-title']}>Chat Application</h1>
                             <div className={classes['pin-description']} >
                                 <p className={sharedstyle.p}>A cross platform chat application that works with internet connection or bluetooth nearby connection. Sign or Sign up to start communicating, customizing profile, and view active users. Switch to bluetooth mode and start searching for nearby users. </p>
@@ -62,7 +88,7 @@ export const Projects = () => {
 
                 <li className={classes['main-li']}>
                     <div className={`${classes['pin-container']} `}>
-                        <div className={`${classes['description-container']} ${classes.itemtwo} `}>
+                        <div className={`${classes['description-container']} ${classes.itemthree} `}>
                             <h1 className={sharedstyle['project-title']}>Discord Bot</h1>
                             <div className={classes['pin-description']} >
                                 <p className={sharedstyle.p}>Built and construct a bot for Uncle Tetsu Ottawa to automate simple tasks. Calculates how many products it needs for a specific number of needs. Add/Remove in a todo run by Firebase, and more features to be implemented. </p>
@@ -121,3 +147,4 @@ export const Projects = () => {
 
     )
 }
+
