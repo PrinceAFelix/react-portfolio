@@ -229,3 +229,12 @@
   position: absolute;
   bottom: 0;
 }
+
+.lazy {
+  filter: blur(3px);
+  transition: filter 0.5s ease-out;
+}
+
+.loaded {
+  filter: blur(0);
+}

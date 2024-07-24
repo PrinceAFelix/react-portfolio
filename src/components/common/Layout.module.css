@@ -231,11 +231,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 130px;
-  min-width: 130px;
+  height: 115px;
+  min-width: 100px;
   width: calc(80% - 80px);
   margin: 0 auto;
-
   border: 4px solid #000000;
   border-radius: 15px 15px 0 0;
   transform-origin: center bottom;
