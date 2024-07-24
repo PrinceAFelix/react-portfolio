@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import classes from './Project.module.css'
 import sharedstyle from '../styles/Sharedstyles.module.css'
 
@@ -18,17 +18,52 @@ import ProjectLayout from '../common/ProjectLayout'
 
 
 
-const projectDescription = [
-    "Developed a responsive portfolio website using complete React that demonstrates my skills, projects and experience.",
-    "iPhone weather app clone programmed in HTML5/CSS/JAVASCRIPT with the use of openweathermap api to extract the weather data.",
-    "Developing with React. A fast and easy to use web application that get you the cheapest flight you need. (On going)",
-    "Developed a School Community Web App with ASP.NET MVC Core Application. This application implements CRUD operation. ",
-    "Designed and developed a bank management system in Java to manage bank operations. Utilized Object-Oriented Programming design pattern to construct a more efficient program.",
-    "A simple strategy board game programmed in Java. You may modify the game board color and perform live chat using Java Networking. (On going)",
-    "Programmed in Java. Stacker was inspired by the arcade game Stacker. The goal of the game is to stack the cubes to the top without missing any blocks.",
-]
+
 
 export const Projects = () => {
+    const imagesRef = useRef([]);
+
+
+
+    const projectDescription = [
+        "Developed a responsive portfolio website using complete React that demonstrates my skills, projects and experience.",
+        "iPhone weather app clone programmed in HTML5/CSS/JAVASCRIPT with the use of openweathermap api to extract the weather data.",
+        "Developing with React. A fast and easy to use web application that get you the cheapest flight you need. (On going)",
+        "Developed a School Community Web App with ASP.NET MVC Core Application. This application implements CRUD operation. ",
+        "Designed and developed a bank management system in Java to manage bank operations. Utilized Object-Oriented Programming design pattern to construct a more efficient program.",
+        "A simple strategy board game programmed in Java. You may modify the game board color and perform live chat using Java Networking. (On going)",
+        "Programmed in Java. Stacker was inspired by the arcade game Stacker. The goal of the game is to stack the cubes to the top without missing any blocks.",
+    ]
+
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.onload = () => {
+                            img.classList.add(classes.loaded);
+                        };
+                        observer.unobserve(img);
+                    }
+                });
+            },
+            { threshold: 0.5 }
+        );
+
+        imagesRef.current.forEach(img => {
+            if (img) observer.observe(img);
+        });
+
+        return () => {
+            imagesRef.current.forEach(img => {
+                if (img) observer.unobserve(img);
+            });
+        };
+    }, [imagesRef]);
+
     return (
         <section className={classes["project-section"]} id="projects">
             <div className={`${sharedstyle["container"]}`}>
@@ -41,8 +76,10 @@ export const Projects = () => {
                     <div className={`${classes['pin-container']} `}>
                         <div className={`${classes['description-container']} ${classes.itemone} `}>
                             <h1 className={sharedstyle['project-title']}>TimeSurf</h1>
-                            <div className={classes['pin-description']} >
-                                <p className={sharedstyle.p}>Shift scheduler application that provides an effective workforce management. View, select, and swap shifts with co-worker as well as request a time off for your favourite holidays.</p>
+                            <div className={classes['pin-description']}>
+                                <p className={sharedstyle.p}>
+                                    Shift scheduler application that provides an effective workforce management. View, select, and swap shifts with co-worker as well as request a time off for your favourite holidays.
+                                </p>
                             </div>
                             <span className={`${classes['project-tech-list']} ${classes.listone}`}>
                                 <ul className={classes.ul}>
@@ -53,26 +90,39 @@ export const Projects = () => {
                                 </ul>
                             </span>
                         </div>
-                        <div className={classes['pin-image']} >
+                        <div className={classes['pin-image']}>
                             <div className={classes['image-container']}>
                                 <div className={classes.overlay} />
-                                <img className={classes.image} src={timesurf} alt="discord-bot-poster" />
-
+                                <img
+                                    ref={el => imagesRef.current[0] = el}
+                                    data-src={timesurf}
+                                    className={`${classes.image} ${classes.lazy}`}
+                                    alt="TimeSurf"
+                                    loading="lazy"
+                                />
                             </div>
                         </div>
-
                     </div>
                 </li>
-
                 <li className={classes['main-li']}>
                     <div className={classes['pin-container']}>
-                        <div className={classes['pin-image']} >
-                            <img className={classes.mediaimg} width="250px" height="auto" src={caout} alt="previewchatapp" />
+                        <div className={classes['pin-image']}>
+                            <img
+                                ref={el => imagesRef.current[1] = el}
+                                data-src={caout}
+                                className={`${classes.mediaimg} ${classes.lazy}`}
+                                width="250px"
+                                height="auto"
+                                alt="Chat Application"
+                                loading="lazy"
+                            />
                         </div>
                         <div className={`${classes['description-container']} ${classes.itemtwo} `}>
                             <h1 className={sharedstyle['project-title']}>Chat Application</h1>
-                            <div className={classes['pin-description']} >
-                                <p className={sharedstyle.p}>A cross platform chat application that works with internet connection or bluetooth nearby connection. Sign or Sign up to start communicating, customizing profile, and view active users. Switch to bluetooth mode and start searching for nearby users. </p>
+                            <div className={classes['pin-description']}>
+                                <p className={sharedstyle.p}>
+                                    A cross platform chat application that works with internet connection or bluetooth nearby connection. Sign or Sign up to start communicating, customizing profile, and view active users. Switch to bluetooth mode and start searching for nearby users.
+                                </p>
                             </div>
                             <span style={{ justifyContent: 'flex-end' }} className={`${classes['project-tech-list']} ${classes.listone}`}>
                                 <ul className={classes.ul}>
@@ -82,16 +132,16 @@ export const Projects = () => {
                                 </ul>
                             </span>
                         </div>
-
                     </div>
                 </li>
-
                 <li className={classes['main-li']}>
                     <div className={`${classes['pin-container']} `}>
                         <div className={`${classes['description-container']} ${classes.itemthree} `}>
                             <h1 className={sharedstyle['project-title']}>Discord Bot</h1>
-                            <div className={classes['pin-description']} >
-                                <p className={sharedstyle.p}>Built and construct a bot for Uncle Tetsu Ottawa to automate simple tasks. Calculates how many products it needs for a specific number of needs. Add/Remove in a todo run by Firebase, and more features to be implemented. </p>
+                            <div className={classes['pin-description']}>
+                                <p className={sharedstyle.p}>
+                                    Built and construct a bot for Uncle Tetsu Ottawa to automate simple tasks. Calculates how many products it needs for a specific number of needs. Add/Remove in a todo run by Firebase, and more features to be implemented.
+                                </p>
                             </div>
                             <span className={`${classes['project-tech-list']} ${classes.listtwo}`}>
                                 <ul className={classes.ul}>
@@ -101,14 +151,18 @@ export const Projects = () => {
                                 </ul>
                             </span>
                         </div>
-                        <div className={classes['pin-image']} >
+                        <div className={classes['pin-image']}>
                             <div className={classes['image-container']}>
                                 <div className={classes.overlay} />
-                                <img className={classes.image} src={discordbot} alt="discord-bot-poster" />
-
+                                <img
+                                    ref={el => imagesRef.current[2] = el}
+                                    data-src={discordbot}
+                                    className={`${classes.image} ${classes.lazy}`}
+                                    alt="Discord Bot"
+                                    loading="lazy"
+                                />
                             </div>
                         </div>
-
                     </div>
                 </li>
             </ul>
