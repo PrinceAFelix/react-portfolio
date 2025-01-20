@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import logo from '../../assets/logo.png'
 
 import classes from "./Navbar.module.css"
-
+import resume from '../../assets/pdfs/PrinceFelix_Resume_2025.pdf';
 
 export const Navbar = () => {
 
@@ -14,6 +14,29 @@ export const Navbar = () => {
   }
 
 
+  const handleViewResume = () => {
+    if (window.AdobeDC) {
+      const adobeDCView = new window.AdobeDC.View({
+        clientId: process.env.REACT_APP_ADOBE_CLIENT_ID, // Replace with your client ID
+      });
+      adobeDCView.previewFile(
+        {
+          content: {
+            location: {
+              url: resume,
+            },
+          },
+          metaData: {
+            fileName: "PrinceFelix_Resume_2025.pdf",
+          },
+        },
+        { embedMode: "LIGHT_BOX", defaultViewMode: "FIT_PAGE" }
+      );
+    } else {
+      console.error("Adobe DC View SDK is not ready.");
+    }
+  };
+
   return (
     <div>
 
@@ -23,7 +46,7 @@ export const Navbar = () => {
         </div>
         <div className={classes.navbar}>
           <div className={classes.logo}>
-            <a href="/#">
+            <a href=".">
               <img className={classes.img} src={logo} alt="logo" />
             </a>
           </div>
@@ -40,6 +63,9 @@ export const Navbar = () => {
               </li>
               <li className={classes.li}>
                 <a onClick={handleSetIsOn} href="/#contact">Contact</a>
+              </li>
+              <li className={classes.li}>
+                <a onClick={handleViewResume} tabIndex="0" role='button'>Resume</a>
               </li>
             </ul>
           </div>
