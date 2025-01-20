@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Caveat&display=swap");
 
 .skill-container {
-  height: 260px;
+  height: auto;
   position: relative;
   padding: 20px;
-  border: 3px solid #ffffff;
+  /* border: 3px solid #ffffff;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; */
 }
 
 @media (max-width: 965px) {
@@ -25,6 +25,8 @@
   position: relative;
   font-family: var(--font-fam-one);
   font-size: clamp(0.875rem, 0.5625rem + 1vw, 1.125rem);
+  text-align: left;
+  margin-left: 40px;
 }
 
 .title::before,
@@ -33,9 +35,8 @@
   display: flex;
   font-family: var(--font-fam-six);
   font-size: 14px;
-  margin: 0 20px;
   opacity: 0.6;
-  margin-left: 20px;
+  transform: translateX(-20px);
 }
 .title::before {
   content: "<h1>";

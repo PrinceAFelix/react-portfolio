@@ -9,27 +9,28 @@ import layout from '../common/Layout.module.css'
 
 const p = <p>
     Java <br />
-    C <br />
-    C++ <br />
-    C#/ASP.NET <br />
+    Python <br />
     SQL <br />
+    Typescript<br />
+    JavaScript <br />
+    HTML/CSS <br />
 </p>
 
 const p1 = <p>
-    ReactJS <br />
+    Spring Boot <br />
+    React <br />
     Node.js <br />
-    Firebase <br />
+    Flutter <br />
 </p>
 
 
 const p2 = <p>
-    Git & Github <br />
-    Bash <br />
-    Postman <br />
-    JUnit Testing <br />
-    Selenium <br />
+    Microsoft Azure <br />
+    Docker <br />
+    Kubernetes <br />
+    Git <br />
+    Github <br />
 </p>
-
 const Chart = ({ title, cover, color }) => {
 
     const barStyle = {
@@ -57,9 +58,9 @@ export const Skills = () => {
             </div>
             <div className={classes["skill-content"]}>
                 <ul>
-                    <li><SkillLayout title="Programming Language" p={p} /></li>
-                    <li><SkillLayout title="Frameworks & BaaS" p={p1} /></li>
-                    <li><SkillLayout title="Tools" p={p2} /></li>
+                    <li><SkillLayout title="Programming Languages" p={p} /></li>
+                    <li><SkillLayout title="Frameworks and Libraries" p={p1} /></li>
+                    <li><SkillLayout title="Cloud and DevOps Tools" p={p2} /></li>
                 </ul>
 
 
