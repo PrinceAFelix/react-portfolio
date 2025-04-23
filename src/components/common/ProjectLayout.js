@@ -11,17 +11,20 @@ const ProjectLayout = (props) => {
     };
 
     useEffect(() => {
+        let timer;
+
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting) {
-                    const timer = setTimeout(() => {
+                    timer = setTimeout(() => {
                         setOnOpen(true);
-                        if (targetRef.current) {
-                            targetRef.current.querySelector('.lazy').style.backgroundImage = `url(${targetRef.current.querySelector('.lazy').dataset.src})`;
-                            targetRef.current.querySelector('.lazy').classList.remove('lazy');
+
+                        const lazyEl = targetRef.current?.querySelector('.lazy');
+                        if (lazyEl) {
+                            lazyEl.style.backgroundImage = `url(${lazyEl.dataset.src})`;
+                            lazyEl.classList.remove('lazy');
                         }
                     }, props.delay);
-                    return () => clearTimeout(timer);
                 }
             },
             { threshold: 0.5 }
@@ -35,8 +38,10 @@ const ProjectLayout = (props) => {
             if (targetRef.current) {
                 observer.unobserve(targetRef.current);
             }
+            clearTimeout(timer);
         };
-    }, [targetRef, props.delay]);
+    }, [props.delay]);
+
 
     const screenStyle = {
         backgroundSize: 'cover',
