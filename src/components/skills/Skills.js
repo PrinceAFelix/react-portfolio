@@ -28,6 +28,7 @@ const p2 = <p>
     Microsoft Azure <br />
     Docker <br />
     Kubernetes <br />
+    Terraform <br />
     Git <br />
     Github <br />
 </p>

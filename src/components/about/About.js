@@ -17,8 +17,8 @@ export const About = () => {
           </div>
         </div>
         <div className={classes["about-text"]}>
-          <p className={sharedstyle.p}>I'm Prince!<br /> A Computer Engineering Technology graduate with a passion for designing, developing, and maintaining applications. I love the challenges that come with coding, as well as the ability to bring ideas to life through programming.</p>
-          <p className={sharedstyle.p}>I’ve gained experience in both frontend and backend development through academic and personal projects, and I’m currently pursuing a Graduate Certificate in Cloud Development and Operations at Algonquin College to deepen my understanding of cloud technologies and DevOps.</p>
+          <p className={sharedstyle.p}>I'm Prince!<br /> A <a target='_blank' href='https://www.algonquincollege.com/sat/program/computer-engineering-technology-computing-science/'>Computer Engineering Technology</a> graduate with a passion for designing, developing, and maintaining applications. I love the challenges that come with coding, as well as the ability to bring ideas to life through programming.</p>
+          <p className={sharedstyle.p}>I have full-stack development experience from academic and personal projects. I recently completed a Graduate Certificate in <a target='_blank' href='https://www.algonquincollege.com/sat/program/cloud-development-and-operations/'>Cloud Development and Operations</a> to deepen my understanding of cloud technologies and DevOps.</p>
           <p className={sharedstyle.p}>I'm a self-starter with a strong work ethic and a problem solver with a great passion for programming.</p>
           <p className={sharedstyle.p}><a href="#contact">Say hello!</a></p>
         </div>
