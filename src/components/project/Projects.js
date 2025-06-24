@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react'
 import classes from './Project.module.css'
 import sharedstyle from '../styles/Sharedstyles.module.css'
 
-import chatApp from '../../assets/chatapp.svg';
+// import chatApp from '../../assets/chatapp.svg';
 import weatherAPI from '../../assets/weatherapi.svg';
 import stacker from '../../assets/stacker.svg';
 import schoolCom from '../../assets/schoolcom.svg';
@@ -13,6 +13,7 @@ import timesurf from '../../assets/timesurf.svg'
 import caout from '../../assets/caout3.gif'
 import porfolio from '../../assets/portfolio.svg'
 import bank from '../../assets/bankms.svg'
+import sensor from '../../assets/iotsensor.svg'
 
 import ProjectLayout from '../common/ProjectLayout'
 
@@ -26,6 +27,7 @@ export const Projects = () => {
 
 
     const projectDescription = [
+        "A Python script simulates three IoT sensors, streaming real-time ice and weather data to Azure IoT Hub every 10 seconds for continuous skateway safety monitoring.",
         "Developed a responsive portfolio website using complete React that demonstrates my skills, projects and experience.",
         "iPhone weather app clone programmed in HTML5/CSS/JAVASCRIPT with the use of openweathermap api to extract the weather data.",
         "Developing with React. A fast and easy to use web application that get you the cheapest flight you need. (On going)",
@@ -170,25 +172,28 @@ export const Projects = () => {
 
                 <ul className={classes["project-ul"]}>
                     <li className={classes["project-li"]}>
-                        <ProjectLayout delay={100} img={porfolio} link={"https://princefelix.com/"} title={"Portfolio"} description={projectDescription[0]} techList={["React", "Responsive Design", "Netlify"]} />
+                        <ProjectLayout delay={50} img={sensor} link={"https://github.com/princefelix-23/IoT-Sensor-Monitoring"} title={"IoTSensor"} description={projectDescription[0]} techList={["Python", "Azure Cloud Services"]} />
                     </li>
                     <li className={classes["project-li"]}>
-                        <ProjectLayout delay={250} img={weatherAPI} link={"https://princeafelix.github.io/Weather-API/"} title={"Weather API"} description={projectDescription[1]} techList={["HTML", "CSS", " JavaScript", "OpenWeatherAPI"]} />
+                        <ProjectLayout delay={100} img={porfolio} link={"https://princefelix.com/"} title={"Portfolio"} description={projectDescription[1]} techList={["React", "Responsive Design", "Netlify"]} />
                     </li>
                     <li className={classes["project-li"]}>
-                        <ProjectLayout delay={350} img={airsearch} link={"https://github.com/PrinceAFelix/AirSearch"} title={"AirSearch"} description={projectDescription[2]} techList={["React", "Responsive Design"]} />
+                        <ProjectLayout delay={250} img={weatherAPI} link={"https://princeafelix.github.io/Weather-API/"} title={"Weather API"} description={projectDescription[2]} techList={["HTML", "CSS", " JavaScript", "OpenWeatherAPI"]} />
                     </li>
                     <li className={classes["project-li"]}>
-                        <ProjectLayout delay={450} img={schoolCom} link={"https://github.com/PrinceAFelix/CST8359-NET-Enterprise-Application-Development/tree/main/Assignment2"} title={"School/Community MS"} description={projectDescription[3]} techList={["C#", "Razor pages", "Azure"]} />
+                        <ProjectLayout delay={350} img={airsearch} link={"https://github.com/PrinceAFelix/AirSearch"} title={"AirSearch"} description={projectDescription[3]} techList={["React", "Responsive Design"]} />
                     </li>
                     <li className={classes["project-li"]}>
-                        <ProjectLayout delay={550} img={bank} link={"https://github.com/PrinceAFelix/Bank-Management-System"} title={"Bank MS"} description={projectDescription[4]} techList={["Java", "Java Swing", "PostgreSQL"]} />
+                        <ProjectLayout delay={450} img={schoolCom} link={"https://github.com/PrinceAFelix/CST8359-NET-Enterprise-Application-Development/tree/main/Assignment2"} title={"School/Community MS"} description={projectDescription[4]} techList={["C#", "Razor pages", "Azure"]} />
                     </li>
                     <li className={classes["project-li"]}>
-                        <ProjectLayout delay={650} img={othello} link={"https://github.com/PrinceAFelix/Othello"} title={"Othello"} description={projectDescription[5]} techList={["Java", "Java Swing"]} />
+                        <ProjectLayout delay={550} img={bank} link={"https://github.com/PrinceAFelix/Bank-Management-System"} title={"Bank MS"} description={projectDescription[5]} techList={["Java", "Java Swing", "PostgreSQL"]} />
                     </li>
                     <li className={classes["project-li"]}>
-                        <ProjectLayout delay={750} img={stacker} link={"https://github.com/PrinceAFelix/Stacker-Game"} title={"Stacker"} description={projectDescription[6]} techList={["Java", "Java Swing"]} />
+                        <ProjectLayout delay={650} img={othello} link={"https://github.com/PrinceAFelix/Othello"} title={"Othello"} description={projectDescription[6]} techList={["Java", "Java Swing"]} />
+                    </li>
+                    <li className={classes["project-li"]}>
+                        <ProjectLayout delay={750} img={stacker} link={"https://github.com/PrinceAFelix/Stacker-Game"} title={"Stacker"} description={projectDescription[7]} techList={["Java", "Java Swing"]} />
                     </li>
 
 
