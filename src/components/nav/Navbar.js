@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
 import logo from '../../assets/logo.png'
 
@@ -46,7 +46,7 @@ export const Navbar = () => {
         </div>
         <div className={classes.navbar}>
           <div className={classes.logo}>
-            <a href=".">
+            <a href="/">
               <img className={classes.img} src={logo} alt="logo" />
             </a>
           </div>
@@ -65,7 +65,7 @@ export const Navbar = () => {
                 <a onClick={handleSetIsOn} href="/#contact">Contact</a>
               </li>
               <li className={classes.li}>
-                <a onClick={handleViewResume} tabIndex="0" role='button'>Resume</a>
+                <button onClick={handleViewResume} tabIndex="0">Resume</button>
               </li>
             </ul>
           </div>

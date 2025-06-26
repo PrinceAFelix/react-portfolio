@@ -38,11 +38,18 @@
   margin-right: 0;
 }
 
+.li:last-child button {
+  all: unset;
+  cursor: pointer;
+  color: #ccf2fc;
+}
+
 .ul .li a {
   text-decoration: none;
   color: #ccf2fc;
 }
 
+.li:last-child button:hover,
 .ul .li a:hover {
   color: #00b7c7;
   transition: all 0.3s ease-in-out;
