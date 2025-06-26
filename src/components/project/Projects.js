@@ -39,6 +39,7 @@ export const Projects = () => {
 
 
     useEffect(() => {
+        const currentImages = imagesRef.current; // capture current ref value
         const observer = new IntersectionObserver(
             (entries, observer) => {
                 entries.forEach(entry => {
@@ -55,16 +56,17 @@ export const Projects = () => {
             { threshold: 0.5 }
         );
 
-        imagesRef.current.forEach(img => {
+        currentImages.forEach(img => {
             if (img) observer.observe(img);
         });
 
         return () => {
-            imagesRef.current.forEach(img => {
+            currentImages.forEach(img => {
                 if (img) observer.unobserve(img);
             });
         };
     }, [imagesRef]);
+
 
     return (
         <section className={classes["project-section"]} id="projects">

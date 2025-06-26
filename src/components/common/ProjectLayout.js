@@ -12,14 +12,14 @@ const ProjectLayout = (props) => {
 
     useEffect(() => {
         let timer;
-
+        const currentTargetRef = targetRef.current
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting) {
                     timer = setTimeout(() => {
                         setOnOpen(true);
 
-                        const lazyEl = targetRef.current?.querySelector('.lazy');
+                        const lazyEl = currentTargetRef?.querySelector('.lazy');
                         if (lazyEl) {
                             lazyEl.style.backgroundImage = `url(${lazyEl.dataset.src})`;
                             lazyEl.classList.remove('lazy');
@@ -30,13 +30,13 @@ const ProjectLayout = (props) => {
             { threshold: 0.5 }
         );
 
-        if (targetRef.current) {
-            observer.observe(targetRef.current);
+        if (currentTargetRef) {
+            observer.observe(currentTargetRef);
         }
 
         return () => {
-            if (targetRef.current) {
-                observer.unobserve(targetRef.current);
+            if (currentTargetRef) {
+                observer.unobserve(currentTargetRef);
             }
             clearTimeout(timer);
         };
