@@ -25,6 +25,7 @@ export const Hero = () => {
 
 
 
+
   useEffect(() => {
     portfolioCtx.onScrollY(0)
     const timer = setTimeout(() => {
@@ -35,7 +36,7 @@ export const Hero = () => {
 
     return () => clearTimeout(timer);
 
-  }, []);
+  }, [portfolioCtx.onScrollY]);
 
 
 
