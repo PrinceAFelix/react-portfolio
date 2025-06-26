@@ -65,7 +65,7 @@ export const Navbar = () => {
                 <a onClick={handleSetIsOn} href="/#contact">Contact</a>
               </li>
               <li className={classes.li}>
-                <button onClick={handleViewResume} tabIndex="0" >Resume</button>
+                <button onClick={handleViewResume} tabIndex="0">Resume</button>
               </li>
             </ul>
           </div>
