@@ -7,7 +7,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0",
-    "react-scripts": "^0.0.0",
+    "react-scripts": "5.0.1",
     "styled-components": "^5.3.10"
   },
   "scripts": {
@@ -36,7 +36,11 @@
     ]
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
+    "babel-eslint": "^10.1.0",
     "dotenv": "^16.0.3",
-    "eslint": "^9.29.0"
+    "eslint": "^8.57.1",
+    "eslint-config-react-app": "^7.0.1"
   }
 }
