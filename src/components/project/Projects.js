@@ -37,6 +37,73 @@ export const Projects = () => {
         "Programmed in Java. Stacker was inspired by the arcade game Stacker. The goal of the game is to stack the cubes to the top without missing any blocks.",
     ]
 
+    const projectItems = [
+        <ProjectLayout
+            delay={50}
+            img={sensor}
+            link="https://github.com/princefelix-23/IoT-Sensor-Monitoring"
+            title="IoTSensor"
+            description={projectDescription[0]}
+            techList={["Python", "Azure Cloud Services"]}
+        />,
+        <ProjectLayout
+            delay={100}
+            img={porfolio}
+            link="https://princefelix.com/"
+            title="Portfolio"
+            description={projectDescription[1]}
+            techList={["React", "Responsive Design", "Netlify"]}
+        />,
+        <ProjectLayout
+            delay={250}
+            img={weatherAPI}
+            link="https://princeafelix.github.io/Weather-API/"
+            title="Weather API"
+            description={projectDescription[2]}
+            techList={["HTML", "CSS", "JavaScript", "OpenWeatherAPI"]}
+        />,
+        <ProjectLayout
+            delay={350}
+            img={airsearch}
+            link="https://github.com/PrinceAFelix/AirSearch"
+            title="AirSearch"
+            description={projectDescription[3]}
+            techList={["React", "Responsive Design"]}
+        />,
+        <ProjectLayout
+            delay={450}
+            img={schoolCom}
+            link="https://github.com/PrinceAFelix/CST8359-NET-Enterprise-Application-Development/tree/main/Assignment2"
+            title="School/Community MS"
+            description={projectDescription[4]}
+            techList={["C#", "Razor pages", "Azure"]}
+        />,
+        <ProjectLayout
+            delay={550}
+            img={bank}
+            link="https://github.com/PrinceAFelix/Bank-Management-System"
+            title="Bank MS"
+            description={projectDescription[5]}
+            techList={["Java", "Java Swing", "PostgreSQL"]}
+        />,
+        <ProjectLayout
+            delay={650}
+            img={othello}
+            link="https://github.com/PrinceAFelix/Othello"
+            title="Othello"
+            description={projectDescription[6]}
+            techList={["Java", "Java Swing"]}
+        />,
+        <ProjectLayout
+            delay={750}
+            img={stacker}
+            link="https://github.com/PrinceAFelix/Stacker-Game"
+            title="Stacker"
+            description={projectDescription[7]}
+            techList={["Java", "Java Swing"]}
+        />,
+    ];
+
 
     useEffect(() => {
         const currentImages = imagesRef.current; // capture current ref value
@@ -171,36 +238,16 @@ export const Projects = () => {
                 </li>
             </ul>
             <div className={classes["project-list"]}>
+                <div className={classes["project-list"]}>
+                    <ul className={classes["project-ul"]}>
+                        {projectItems.slice(0, 8).map((item, i) => (
+                            <li className={classes["project-li"]} key={i}>
+                                {item}
+                            </li>
+                        ))}
+                    </ul>
 
-                <ul className={classes["project-ul"]}>
-                    <li className={classes["project-li"]}>
-                        <ProjectLayout delay={50} img={sensor} link={"https://github.com/princefelix-23/IoT-Sensor-Monitoring"} title={"IoTSensor"} description={projectDescription[0]} techList={["Python", "Azure Cloud Services"]} />
-                    </li>
-                    <li className={classes["project-li"]}>
-                        <ProjectLayout delay={100} img={porfolio} link={"https://princefelix.com/"} title={"Portfolio"} description={projectDescription[1]} techList={["React", "Responsive Design", "Netlify"]} />
-                    </li>
-                    <li className={classes["project-li"]}>
-                        <ProjectLayout delay={250} img={weatherAPI} link={"https://princeafelix.github.io/Weather-API/"} title={"Weather API"} description={projectDescription[2]} techList={["HTML", "CSS", " JavaScript", "OpenWeatherAPI"]} />
-                    </li>
-                    <li className={classes["project-li"]}>
-                        <ProjectLayout delay={350} img={airsearch} link={"https://github.com/PrinceAFelix/AirSearch"} title={"AirSearch"} description={projectDescription[3]} techList={["React", "Responsive Design"]} />
-                    </li>
-                    <li className={classes["project-li"]}>
-                        <ProjectLayout delay={450} img={schoolCom} link={"https://github.com/PrinceAFelix/CST8359-NET-Enterprise-Application-Development/tree/main/Assignment2"} title={"School/Community MS"} description={projectDescription[4]} techList={["C#", "Razor pages", "Azure"]} />
-                    </li>
-                    <li className={classes["project-li"]}>
-                        <ProjectLayout delay={550} img={bank} link={"https://github.com/PrinceAFelix/Bank-Management-System"} title={"Bank MS"} description={projectDescription[5]} techList={["Java", "Java Swing", "PostgreSQL"]} />
-                    </li>
-                    <li className={classes["project-li"]}>
-                        <ProjectLayout delay={650} img={othello} link={"https://github.com/PrinceAFelix/Othello"} title={"Othello"} description={projectDescription[6]} techList={["Java", "Java Swing"]} />
-                    </li>
-                    <li className={classes["project-li"]}>
-                        <ProjectLayout delay={750} img={stacker} link={"https://github.com/PrinceAFelix/Stacker-Game"} title={"Stacker"} description={projectDescription[7]} techList={["Java", "Java Swing"]} />
-                    </li>
-
-
-
-                </ul>
+                </div>
             </div>
 
             <div className={`${sharedstyle['end-section']} ${classes.end}`} ></div>
