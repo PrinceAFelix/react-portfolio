@@ -25,6 +25,7 @@ export const Hero = () => {
 
 
 
+
   useEffect(() => {
     portfolioCtx.onScrollY(0)
     const timer = setTimeout(() => {
@@ -36,22 +37,6 @@ export const Hero = () => {
     return () => clearTimeout(timer);
 
   }, []);
-
-
-
-  const handleVisibility = () => {
-    setShow((prev) => {
-      return { ...prev, visibility: false }
-    });
-  }
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScrollY);
-    return () => {
-      window.removeEventListener('scroll', handleScrollY);
-    };
-  }, [window.scrollY]);
-
 
   const handleScrollY = () => {
     portfolioCtx.onScrollY(window.scrollY)
@@ -66,6 +51,23 @@ export const Hero = () => {
   }
 
 
+  const handleVisibility = () => {
+    setShow((prev) => {
+      return { ...prev, visibility: false }
+    });
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScrollY);
+    return () => {
+      window.removeEventListener('scroll', handleScrollY);
+    };
+  }, []);
+
+
+
+
+
 
   const [isMouseEnter, setIsMouseEnter] = useState(
     {
@@ -76,84 +78,26 @@ export const Hero = () => {
   );
 
   const handleMouseEnter = (line, index) => {
-    setIsMouseEnter((prevState) => {
-
-      if (line === 1) {
-        return {
-          ...prevState, first: prevState.first.map((value, i) => {
-            if (i === index) {
-              return true;
-            } else {
-              return false;
-            }
-          }),
-        };
-      }
-      else if (line === 2) {
-        return {
-          ...prevState, second: prevState.second.map((value, i) => {
-            if (i === index) {
-              return true;
-            } else {
-              return false;
-            }
-          }),
-        };
-      }
-      else if (line === 3) {
-        return {
-          ...prevState, third: prevState.third.map((value, i) => {
-            if (i === index) {
-              return true;
-            } else {
-              return false;
-            }
-          }),
-        };
-      }
-
+    setIsMouseEnter(prevState => {
+      const updatedLine = prevState[lineMap[line]].map((_, i) => i === index);
+      return { ...prevState, [lineMap[line]]: updatedLine };
     });
   };
 
   const handleMouseLeave = (line, index) => {
-
-    setIsMouseEnter((prevState) => {
-      if (line === 1) {
-        return {
-          ...prevState, first: prevState.first.map((value, i) => {
-            if (i === index) {
-              return false;
-            }
-
-          }),
-        };
-      }
-      else if (line === 2) {
-        return {
-          ...prevState, second: prevState.second.map((value, i) => {
-            if (i === index) {
-              return false;
-            }
-          }),
-        };
-      }
-      else if (line === 3) {
-        return {
-          ...prevState, third: prevState.third.map((value, i) => {
-            if (i === index) {
-              return false;
-            }
-          }),
-        };
-      }
+    setIsMouseEnter(prevState => {
+      const updatedLine = prevState[lineMap[line]].map((value, i) => i === index ? false : value);
+      return { ...prevState, [lineMap[line]]: updatedLine };
     });
   };
 
-
+  const lineMap = {
+    1: 'first',
+    2: 'second',
+    3: 'third'
+  };
 
   return (
-
-
     <section id='#'>
       <div className={classes["hero"]}>
         <div>
@@ -194,7 +138,7 @@ export const Hero = () => {
 
         {
           show.popUp && (
-            <div className={`${classes['popup-btn']} ${portfolioCtx.scrollY >= 1 ? classes.hidden : ''} ${show.visibility === false ? classes.hidden : ''}`}>
+            <div data-testid="popupbtn" className={`${classes['popup-btn']} ${portfolioCtx.scrollY >= 1 ? classes.hidden : ''} ${show.visibility === false ? classes.hidden : ''}`}>
               <a onClick={handleVisibility} href="#about"><ChevronArrow className={`${classes.svg}`} /></a>
             </div>
           )
