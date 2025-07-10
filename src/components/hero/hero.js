@@ -138,7 +138,7 @@ export const Hero = () => {
 
         {
           show.popUp && (
-            <div className={`${classes['popup-btn']} ${portfolioCtx.scrollY >= 1 ? classes.hidden : ''} ${show.visibility === false ? classes.hidden : ''}`}>
+            <div data-testid="popupbtn" className={`${classes['popup-btn']} ${portfolioCtx.scrollY >= 1 ? classes.hidden : ''} ${show.visibility === false ? classes.hidden : ''}`}>
               <a onClick={handleVisibility} href="#about"><ChevronArrow className={`${classes.svg}`} /></a>
             </div>
           )
