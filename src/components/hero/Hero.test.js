@@ -11,12 +11,11 @@ describe('Hero component', () => {
 
         // Query all spans inside h1
         const heading = screen.getByRole('heading', { level: 1 });
-        const spanTexts = Array.from(heading.querySelectorAll('span')).map(span => span.textContent).join('');
 
-        // Validate the expected combined text
-        expect(spanTexts).toContain('Hi, My name is');
-        expect(spanTexts).toContain('rince Adrianne Felix,');
-        expect(spanTexts).toContain('software developer');
+        // Validate text content directly
+        expect(heading).toHaveTextContent('Hi, My name is');
+        expect(heading).toHaveTextContent('rince Adrianne Felix,');
+        expect(heading).toHaveTextContent('software developer');
 
     });
 
