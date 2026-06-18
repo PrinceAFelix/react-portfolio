@@ -27,7 +27,7 @@ export const Navbar = () => {
             },
           },
           metaData: {
-            fileName: "PrinceFelix_Resume_2025.pdf",
+            fileName: "Prince Felix_Resume.pdf",
           },
         },
         { embedMode: "LIGHT_BOX", defaultViewMode: "FIT_PAGE" }
