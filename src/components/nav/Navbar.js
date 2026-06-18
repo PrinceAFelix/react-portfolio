@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import logo from '../../assets/logo.png'
 
 import classes from "./Navbar.module.css"
-import resume from '../../assets/pdfs/PrinceFelix_Resume_2025.pdf';
+import resume from '../../assets/pdfs/PrinceFelix_Resume.pdf';
 
 export const Navbar = () => {
 
@@ -27,7 +27,7 @@ export const Navbar = () => {
             },
           },
           metaData: {
-            fileName: "Prince Felix_Resume.pdf",
+            fileName: "PrinceFelix_Resume.pdf",
           },
         },
         { embedMode: "LIGHT_BOX", defaultViewMode: "FIT_PAGE" }
