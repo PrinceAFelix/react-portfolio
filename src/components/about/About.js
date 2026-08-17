@@ -16,7 +16,7 @@ export const About = () => {
             <img
               className={classes.image}
               src={profile}
-              alt="Prince Felix — profile photo"
+              alt="Prince Felix — profile"
               loading="lazy"
               decoding="async"
             />
