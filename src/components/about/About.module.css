@@ -22,15 +22,26 @@
   .aboutcontent {
     flex-direction: column-reverse;
     gap: 0;
+    align-items: center;
   }
 
+  /* Show profile card on small screens and make image responsive and centered */
   .myInfo {
-    visibility: hidden;
+    visibility: visible;
+    padding: 20px;
+    max-width: 240px;
+    margin: 0 auto 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .image {
     visibility: visible;
     width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
   }
 }
 

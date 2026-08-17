@@ -13,7 +13,13 @@ export const About = () => {
       <div className={classes.aboutcontent}>
         <div className={classes.myInfo}>
           <div id="profile" className={classes['profile']}>
-            <img className={classes.image} src={profile} alt="myPic" />
+            <img
+              className={classes.image}
+              src={profile}
+              alt="Prince Felix — profile photo"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
         </div>
         <div className={classes["about-text"]}>
