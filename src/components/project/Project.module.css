@@ -1,3 +1,7 @@
+/* =========================
+   PROJECT SECTION
+========================= */
+
 .project-section {
   max-width: 1000px;
   height: auto;
@@ -9,15 +13,17 @@
   gap: 50px;
 }
 
-.project-content {
+.project-content,
+.project-list,
+.main-ul {
   width: 100%;
   max-width: 1000px;
 }
 
-.project-list img {
-  height: 150px;
-  width: 180px;
-  border-radius: 25px;
+.project-list {
+  position: relative;
+  height: 100%;
+  display: block;
 }
 
 .project-pin {
@@ -25,9 +31,11 @@
   width: 100%;
 }
 
+/* =========================
+   MAIN PROJECT LIST
+========================= */
+
 .main-ul {
-  width: 100%;
-  max-width: 1000px;
   position: relative;
   display: block;
   margin: 0;
@@ -37,7 +45,7 @@
 .main-li {
   list-style: none;
   display: list-item;
-  margin: 20px 20px 0px 20px;
+  margin: 20px;
 }
 
 .pin-container {
@@ -59,23 +67,50 @@
 .pin-image:hover {
   z-index: 999;
 }
+
 .pin-image:hover .mediaimg {
   transform: scaleY(1.2) rotate(-10deg);
+}
+
+/* =========================
+   PROJECT IMAGES
+========================= */
+
+.image-container {
+  width: 100%;
+}
+
+.pin-image .image-container {
+  display: block;
+  max-width: 420px;
 }
 
 .mediaimg {
   margin: 0;
   line-height: 1;
   border: none;
-  transition: all 0.3s ease-out;
-  filter: var(--ds-one);
   width: 100%;
-  max-width: 250px;
+  max-width: 280px;
+  border-radius: 18px;
+  box-shadow: var(--bs-four);
+  filter: var(--ds-one);
+  transition: all 0.3s ease-out;
 }
 
-.image-container {
+.image {
+  margin: 0;
+  line-height: 1;
+  border: none;
   width: 100%;
+  max-width: 400px;
+  border-radius: 20px;
+  box-shadow: var(--bs-four);
+  transition: all 500ms ease-out;
 }
+
+/* =========================
+   IMAGE OVERLAY
+========================= */
 
 .overlay {
   position: absolute;
@@ -90,19 +125,14 @@
 
 .pin-image:hover .overlay {
   opacity: 0;
-  transition: opacity 500ms ease-in-out, transform 500ms ease-in-out;
+  transition:
+    opacity 500ms ease-in-out,
+    transform 500ms ease-in-out;
 }
 
-.image {
-  margin: 0;
-  line-height: 1;
-  border: none;
-  width: 100%;
-  max-width: 400px;
-  transition: all 500ms ease-out;
-  border-radius: 20px;
-  box-shadow: var(--bs-four);
-}
+/* =========================
+   DESCRIPTION
+========================= */
 
 .description-container {
   text-align: right;
@@ -130,13 +160,17 @@
   width: 100%;
 }
 
+/* =========================
+   SECOND PROJECT ALIGNMENT
+========================= */
+
 .pin-container > div:not(:nth-child(2)) p,
 .pin-container > div:not(:nth-child(2)) {
   text-align: left;
 }
 
 .main-ul .main-li:nth-of-type(2) .pin-container .pin-image,
-.pin-container > div:nth-child(2) {
+.main-ul .main-li:nth-of-type(2) .pin-container > div:nth-child(2) {
   transform: translateX(-25px);
 }
 
@@ -151,10 +185,9 @@
   transform: translateX(25px);
 }
 
-.main-ul .main-li:nth-of-type(2) .pin-container {
-  position: relative;
-  display: flex;
-}
+/* =========================
+   TECHNOLOGIES
+========================= */
 
 .project-tech-list {
   position: relative;
@@ -163,7 +196,7 @@
   float: right;
 }
 
-.project-tech-list .ul {
+/* .project-tech-list .ul {
   text-align: left;
   list-style: none;
   margin: 0;
@@ -176,16 +209,27 @@
   font-family: var(--font-fam-one);
   opacity: 0.4;
   font-style: italic;
-  margin: 0px 5px 0px 0px;
+  margin: 0 5px 0 0;
+} */
+
+.featured-ul {
+  text-align: left;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.project-list {
-  width: 100%;
-  max-width: 1000px;
-  position: relative;
-  height: 100%;
-  display: block;
+.featured-ul li {
+  display: inline-block;
+  font-size: 13px;
+  font-family: var(--font-fam-one);
+  opacity: 0.4;
+  font-style: italic;
 }
+
+/* =========================
+   OLD PROJECT GRID
+========================= */
 
 .project-list .project-ul {
   display: grid;
@@ -199,6 +243,313 @@
   list-style: none;
   margin: 0;
 }
+
+.listtwo {
+  float: left;
+}
+
+/* =========================
+   FEATURED PROJECTS
+========================= */
+
+.featured-projects {
+  width: 100%;
+  margin-top: 40px;
+}
+
+.featured-header {
+  margin-bottom: 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.featured-header span {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  opacity: 0.65;
+}
+
+/* =========================
+   FEATURED LAYOUT
+========================= */
+
+/* Everything is intentionally stacked */
+.featured-main,
+.featured-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.featured-main {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.featured-card {
+  width: 100%;
+}
+
+.featured-main,
+.featured-card {
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* =========================
+   FEATURED CARD
+========================= */
+
+.highlight {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 22px;
+  align-items: center;
+  padding: 18px;
+  border-radius: 16px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(0, 0, 0, 0.02)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.06);
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    background 220ms ease;
+}
+
+.highlight:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 22px 48px rgba(2, 6, 23, 0.12);
+}
+
+.project-card {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  padding: 18px;
+  border-radius: 20px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(0, 0, 0, 0.02)
+  );
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 240ms ease,
+    box-shadow 240ms ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================
+   FEATURED IMAGE
+========================= */
+
+.featured-main .highlight-image,
+.featured-card .highlight-image {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  box-sizing: border-box;
+}
+
+.featured-main .image-container,
+.featured-card .image-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.featured-main .image,
+.featured-card .image,
+.featured-card .mediaimg {
+  width: 100%;
+  max-height: 350px;
+  object-fit: contain;
+}
+
+/* =========================
+   FEATURED CONTENT
+========================= */
+
+.highlight-image {
+  width: 100%;
+  max-width: 420px;
+}
+
+.highlight-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+
+.highlight-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.featured-main .highlight-content,
+.featured-card .highlight-content {
+  padding: 25px 30px 30px;
+}
+
+/* =========================
+   TITLES
+========================= */
+
+.project-title {
+  font-size: 1.45rem;
+  margin: 0 0 6px;
+  color: var(--accent-color, #00bfa5);
+  font-weight: 700;
+}
+
+.highlightTitle {
+  margin: 0;
+  color: var(--accent-color, #00bfa5);
+  font-size: 1.35rem;
+  font-family: inherit;
+}
+
+.featured-main .highlightTitle {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-family: "Inter", sans-serif;
+}
+
+.featured-card .highlightTitle {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-family: "Inter", sans-serif;
+}
+
+/* =========================
+   DESCRIPTIONS
+========================= */
+
+.highlightDesc {
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  color: var(--muted-text, #dfe7ea);
+}
+
+.featured-main .highlightDesc {
+  max-width: 700px;
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+.featured-card .highlightDesc {
+  max-width: 700px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+/* =========================
+   PROJECT META
+========================= */
+
+.project-meta {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.tech-badge {
+  display: inline-block;
+  color: var(--muted-text, rgba(255, 255, 255, 0.85));
+  padding-right: 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  opacity: 0.95;
+}
+
+/* =========================
+   PROJECT CTA
+========================= */
+
+.project-cta {
+  margin-left: 6px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 191, 165, 0.12),
+    rgba(0, 143, 255, 0.06)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  color: var(--accent-color, #00bfa5);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* =========================
+   FEATURED LABEL
+========================= */
+
+.featured-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.6;
+  margin-bottom: 8px;
+}
+
+/* =========================
+   PROJECT LINK
+========================= */
+
+.project-link {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  font-family: var(--font-fam-one);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary-color);
+  transition: all 300ms ease;
+}
+
+.project-link:hover {
+  transform: translateX(-5px);
+}
+
+/* =========================
+   MISC
+========================= */
+
+.end {
+  position: absolute;
+  bottom: 0;
+}
+
+.lazy {
+  filter: blur(3px);
+  transition: filter 0.5s ease-out;
+}
+
+.loaded {
+  filter: blur(0);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media (min-width: 1010px) {
   .project-list .project-ul .project-li:nth-child(3n + 1):last-child {
@@ -215,26 +566,45 @@
   }
 }
 
-.listtwo {
-  float: left;
+@media (max-width: 768px) {
+  .featured-main .highlight-image,
+  .featured-card .highlight-image {
+    padding: 15px;
+  }
+
+  .featured-main .highlight-content,
+  .featured-card .highlight-content {
+    padding: 20px;
+  }
+
+  .featured-main .highlightTitle {
+    font-size: 1.7rem;
+  }
+
+  .featured-card .highlightTitle {
+    font-size: 1.3rem;
+  }
+
+  .pin-container {
+    flex-direction: column-reverse;
+    gap: 14px;
+  }
+
+  .description-container {
+    text-align: center;
+  }
+
+  .pin-description p {
+    text-align: center;
+  }
+
+  .project-title {
+    font-size: 1.25rem;
+  }
 }
 
 @media (max-width: 600px) {
   .main-li {
     display: block;
   }
-}
-
-.end {
-  position: absolute;
-  bottom: 0;
-}
-
-.lazy {
-  filter: blur(3px);
-  transition: filter 0.5s ease-out;
-}
-
-.loaded {
-  filter: blur(0);
 }
