@@ -1,16 +1,18 @@
 import React, { useRef, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import classes from './Project.module.css'
 import sharedstyle from '../styles/Sharedstyles.module.css'
 
 // import chatApp from '../../assets/chatapp.svg';
 import weatherAPI from '../../assets/weatherapi.svg';
+import appPreview from '../../assets/app-preview.webp';
 import stacker from '../../assets/stacker.svg';
 import schoolCom from '../../assets/schoolcom.svg';
 import othello from '../../assets/othello.svg'
 import airsearch from '../../assets/airsearch.svg'
 import discordbot from '../../assets/discordbot.svg'
 import timesurf from '../../assets/timesurf.svg'
-import caout from '../../assets/caout3.gif'
+import caout from '../../assets/caout3.webm'
 import porfolio from '../../assets/portfolio.svg'
 import bank from '../../assets/bankms.svg'
 import sensor from '../../assets/iotsensor.svg'
@@ -110,26 +112,49 @@ export const Projects = () => {
         const observer = new IntersectionObserver(
             (entries, observer) => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src;
-                        img.onload = () => {
-                            img.classList.add(classes.loaded);
+                    if (!entry.isIntersecting) return;
+                    const el = entry.target;
+                    const src = el.dataset && el.dataset.src;
+                    if (!src) {
+                        observer.unobserve(el);
+                        return;
+                    }
+
+                    if (el.tagName === 'IMG') {
+                        el.src = src;
+                        el.onload = () => el.classList.add(classes.loaded);
+                        observer.unobserve(el);
+                    } else if (el.tagName === 'VIDEO') {
+                        // assign src and load video, add loaded class when data available
+                        if (!el.src) el.src = src;
+                        const onLoaded = () => {
+                            el.classList.add(classes.loaded);
+                            // attempt to autoplay muted videos
+                            if (el.muted) {
+                                const p = el.play();
+                                if (p && typeof p.catch === 'function') p.catch(() => { });
+                            }
                         };
-                        observer.unobserve(img);
+                        el.addEventListener('loadeddata', onLoaded, { once: true });
+                        try { el.load(); } catch (e) { }
+                        observer.unobserve(el);
+                    } else {
+                        // fallback: set src if possible
+                        if ('src' in el) el.src = src;
+                        observer.unobserve(el);
                     }
                 });
             },
             { threshold: 0.5 }
         );
 
-        currentImages.forEach(img => {
-            if (img) observer.observe(img);
+        currentImages.forEach(node => {
+            if (node) observer.observe(node);
         });
 
         return () => {
-            currentImages.forEach(img => {
-                if (img) observer.unobserve(img);
+            currentImages.forEach(node => {
+                if (node) observer.unobserve(node);
             });
         };
     }, [imagesRef]);
@@ -142,30 +167,54 @@ export const Projects = () => {
                 <span className={`${sharedstyle["divider"]} ${sharedstyle.center}`}></span>
             </div>
 
-            <ul className={classes['main-ul']}>
-                <li className={classes['main-li']}>
-                    <div className={`${classes['pin-container']} `}>
-                        <div className={`${classes['description-container']} ${classes.itemone} `}>
-                            <h1 className={sharedstyle['project-title']}>TimeSurf</h1>
-                            <div className={classes['pin-description']}>
-                                <p className={sharedstyle.p}>
-                                    Shift scheduler application that provides an effective workforce management. View, select, and swap shifts with co-worker as well as request a time off for your favourite holidays.
-                                </p>
-                            </div>
-                            <span className={`${classes['project-tech-list']} ${classes.listone}`}>
-                                <ul className={classes.ul}>
-                                    <li>Java Spring Boot</li>
-                                    <li>MongoDB</li>
-                                    <li>Flutter</li>
-                                    <li>ReactJS</li>
-                                </ul>
-                            </span>
+
+            <div className={classes['featured-projects']}>
+                <article className={`${classes.highlight} ${classes['featured-main']}`}>
+                    <div className={classes['highlight-image']}>
+                        <div className={classes['image-container']}>
+                            <img
+                                ref={el => imagesRef.current[0] = el}
+                                data-src={appPreview}
+                                className={`${classes.image} ${classes.lazy}`}
+                                alt="Continuefy app preview"
+                                loading="lazy"
+                            />
                         </div>
-                        <div className={classes['pin-image']}>
+                    </div>
+
+                    <div className={classes['highlight-content']}>
+                        <h1 className={`${sharedstyle['project-title']} ${classes.highlightTitle}`}>
+                            Continuefy
+                        </h1>
+
+                        <p className={`${sharedstyle.p} ${classes.highlightDesc}`}>
+                            Continuefy lets you continue AI conversations across platforms
+                            without losing context.
+                        </p>
+
+                        <ul className={classes['featured-ul']}>
+                            <li className={classes['tech-badge']}>Next.js</li>
+                            <li className={classes['tech-badge']}>Firebase</li>
+                            <li className={classes['tech-badge']}>AI</li>
+                            <li className={classes['tech-badge']}>Browser Extension</li>
+                        </ul>
+
+                        <Link
+                            to="/continuefy"
+                            className={classes['project-link']}
+                        >
+                            Explore project →
+                        </Link>
+                    </div>
+                </article>
+
+                <div className={classes['featured-grid']}>
+
+                    <article className={`${classes.highlight} ${classes['featured-card']}`}>
+                        <div className={classes['highlight-image']}>
                             <div className={classes['image-container']}>
-                                <div className={classes.overlay} />
                                 <img
-                                    ref={el => imagesRef.current[0] = el}
+                                    ref={el => imagesRef.current[1] = el}
                                     data-src={timesurf}
                                     className={`${classes.image} ${classes.lazy}`}
                                     alt="TimeSurf"
@@ -173,60 +222,64 @@ export const Projects = () => {
                                 />
                             </div>
                         </div>
-                    </div>
-                </li>
-                <li className={classes['main-li']}>
-                    <div className={classes['pin-container']}>
-                        <div className={classes['pin-image']}>
-                            <img
-                                ref={el => imagesRef.current[1] = el}
+
+                        <div className={classes['highlight-content']}>
+                            <h2 className={classes.highlightTitle}>
+                                TimeSurf
+                            </h2>
+
+                            <p className={`${sharedstyle.p} ${classes.highlightDesc}`}>
+                                Workforce scheduling platform for viewing, swapping,
+                                and managing employee shifts.
+                            </p>
+
+                            <ul className={classes['featured-ul']}>
+                                <li className={classes['tech-badge']}>Spring Boot</li>
+                                <li className={classes['tech-badge']}>MongoDB</li>
+                                <li className={classes['tech-badge']}>Flutter</li>
+                            </ul>
+                        </div>
+                    </article>
+
+
+                    <article className={`${classes.highlight} ${classes['featured-card']}`}>
+                        <div className={classes['highlight-image']}>
+                            <video
+                                ref={el => imagesRef.current[2] = el}
                                 data-src={caout}
                                 className={`${classes.mediaimg} ${classes.lazy}`}
-                                width="250px"
-                                height="auto"
-                                alt="Chat Application"
-                                loading="lazy"
+                                muted
+                                loop
+                                playsInline
+                                preload="metadata"
+                                aria-label="Chat Application demo"
                             />
                         </div>
-                        <div className={`${classes['description-container']} ${classes.itemtwo} `}>
-                            <h1 className={sharedstyle['project-title']}>Chat Application</h1>
-                            <div className={classes['pin-description']}>
-                                <p className={sharedstyle.p}>
-                                    A cross platform chat application that works with internet connection or bluetooth nearby connection. Sign or Sign up to start communicating, customizing profile, and view active users. Switch to bluetooth mode and start searching for nearby users.
-                                </p>
-                            </div>
-                            <span style={{ justifyContent: 'flex-end' }} className={`${classes['project-tech-list']} ${classes.listone}`}>
-                                <ul className={classes.ul}>
-                                    <li>Flutter</li>
-                                    <li>Firebase</li>
-                                    <li>Dart</li>
-                                </ul>
-                            </span>
+
+                        <div className={`${classes.highlightContent}`}>
+                            <h2 className={classes.highlightTitle}>
+                                Chat Application
+                            </h2>
+
+                            <p className={`${sharedstyle.p} ${classes.highlightDesc}`}>
+                                Cross-platform messaging application supporting internet
+                                and nearby Bluetooth communication.
+                            </p>
+
+                            <ul className={classes['featured-ul']}>
+                                <li className={classes['tech-badge']}>Flutter</li>
+                                <li className={classes['tech-badge']}>Firebase</li>
+                                <li className={classes['tech-badge']}>Dart</li>
+                            </ul>
                         </div>
-                    </div>
-                </li>
-                <li className={classes['main-li']}>
-                    <div className={`${classes['pin-container']} `}>
-                        <div className={`${classes['description-container']} ${classes.itemthree} `}>
-                            <h1 className={sharedstyle['project-title']}>Discord Bot</h1>
-                            <div className={classes['pin-description']}>
-                                <p className={sharedstyle.p}>
-                                    Built and construct a bot for Uncle Tetsu Ottawa to automate simple tasks. Calculates how many products it needs for a specific number of needs. Add/Remove in a todo run by Firebase, and more features to be implemented.
-                                </p>
-                            </div>
-                            <span className={`${classes['project-tech-list']} ${classes.listtwo}`}>
-                                <ul className={classes.ul}>
-                                    <li>JavaScript</li>
-                                    <li>NodeJs</li>
-                                    <li>Firebase</li>
-                                </ul>
-                            </span>
-                        </div>
-                        <div className={classes['pin-image']}>
+                    </article>
+
+
+                    <article className={`${classes.highlight} ${classes['featured-card']}`}>
+                        <div className={classes['highlight-image']}>
                             <div className={classes['image-container']}>
-                                <div className={classes.overlay} />
                                 <img
-                                    ref={el => imagesRef.current[2] = el}
+                                    ref={el => imagesRef.current[3] = el}
                                     data-src={discordbot}
                                     className={`${classes.image} ${classes.lazy}`}
                                     alt="Discord Bot"
@@ -234,9 +287,28 @@ export const Projects = () => {
                                 />
                             </div>
                         </div>
-                    </div>
-                </li>
-            </ul>
+
+                        <div className={classes['highlight-content']}>
+                            <h2 className={classes.highlightTitle}>
+                                Discord Bot
+                            </h2>
+
+                            <p className={`${sharedstyle.p} ${classes.highlightDesc}`}>
+                                Automation bot for inventory calculations and task
+                                management workflows.
+                            </p>
+
+                            <ul className={classes['featured-ul']}>
+                                <li className={classes['tech-badge']}>Node.js</li>
+                                <li className={classes['tech-badge']}>JavaScript</li>
+                                <li className={classes['tech-badge']}>Firebase</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                </div>
+
+            </div>
             <div className={classes["project-list"]}>
                 <div className={classes["project-list"]}>
                     <ul className={classes["project-ul"]}>
